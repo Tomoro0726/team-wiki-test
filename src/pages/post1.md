@@ -14,3 +14,5 @@ It probably isn't styled much, but Markdown does support:
 - lists
 - [links](https://astro.build)
 - and more!
+
+![a bird](/assets/IMG_5885.JPG)
