@@ -14,12 +14,26 @@ const { frontmatter } = Astro.props;
 	</head>
 	<body>
 		<header class="header">
-			<h1>{frontmatter.title}</h1>
-			<p class="header-description">{frontmatter.description}</p>
+			<h1>Grand Tokyo</h1>
+			<nav>
+				<ul>
+					<li><a href="/">Project</a></li>
+					<li><a href="/about">Wet Lab</a></li>
+					<li><a href="/about">Dry Lab</a></li>
+					<li><a href="/about">Human Practice</a></li>
+					<li><a href="/about">Team</a></li>
+				</ul>
+			</nav>
 		</header>
+		<h1>{frontmatter.title}</h1>
+		<p class="header-description">{frontmatter.description}</p>
 		<div class="container">
 			<slot />
 		</div>
+		<footer>
+			<p>&copy;2024 - Content on this site is licensed under a Creative Commons Attribution 4.0 International license.</p>
+			<p>The repository used to create this website is available at <a>https://github.com/grand-tokyo/team-wiki</a></p>
+		</footer>
 	</body>
 </html>
 
