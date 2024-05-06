@@ -15,4 +15,9 @@ It probably isn't styled much, but Markdown does support:
 - [links](https://astro.build)
 - and more!
 
-![a bird](/assets/IMG_5885.JPG)
+$$ 
+\frac{1}{\pi} = \frac{2\sqrt{2}}{99^2}
+                \sum_{n=0}^\infty
+                \frac{(4n)!}{(4^n n!)^4}
+                \frac{1103 + 26390n}{99^{4n}}
+$$
