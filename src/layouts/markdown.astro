@@ -1,10 +1,9 @@
 ---
 // ページから渡ってきたtitleを取得
 const { frontmatter, headings } = Astro.props;
-console.log(frontmatter);
-console.log(headings);
 import Menu from "../components/menu.tsx";
 import Writer from "../components/writer.tsx";
+import Index from "../components/index.tsx";
 import "../styles/global.css";
 import "../styles/markdown.css";
 ---
@@ -41,39 +40,7 @@ import "../styles/markdown.css";
           >
             Index
           </p>
-          <div>
-            <div class="flex items-start ml-[2vw] h-min">
-              <div class="flex justify-center [flex-flow:column] items-center">
-                <img class="w-[1.4vw] h-[1.4vw]" src="/markdown/index_1.svg" />
-                <img src="/markdown/line.svg" class="w-[2px]" />
-              </div>
-              <a class="ml-[9px] no-underline text-[1vw]">Title</a>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-start ml-[2vw] h-min">
-              <div class="flex justify-center [flex-flow:column] items-center">
-                <img class="w-[1.4vw] h-[1.4vw]" src="/markdown/index_1.svg" />
-                <img src="/markdown/line.svg" class="w-[2px]" />
-              </div>
-              <a class="ml-[9px] no-underline text-[1vw]">Title</a>
-            </div>
-          </div><div>
-            <div class="flex items-start ml-[2vw] h-min">
-              <div class="flex justify-center [flex-flow:column] items-center">
-                <img class="w-[1.4vw] h-[1.4vw]" src="/markdown/index_1.svg" />
-                <img src="/markdown/line.svg" class="w-[2px]" />
-              </div>
-              <a class="ml-[9px] no-underline text-[1vw]">Title</a>
-            </div>
-          </div><div>
-            <div class="flex items-start ml-[2vw] h-min">
-              <div class="flex justify-center [flex-flow:column] items-center">
-                <img class="w-[1.4vw] h-[1.4vw]" src="/markdown/index_1.svg" />
-              </div>
-              <a class="ml-[9px] no-underline text-[1vw]">Title</a>
-            </div>
-          </div>
+          <Index index={headings} />
         </div>
       </div>
     </div>
