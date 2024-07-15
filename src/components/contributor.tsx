@@ -9,7 +9,6 @@ export default function Contributor(contributors: any) {
   member = member.filter(function (x: any) {
     return x.match(/contributor[0-9]+/);
   });
-  console.log(member[2]);
   return (
     <div className="flex items-center p-[1vw] pl-[2vw] pt-0">
       {
