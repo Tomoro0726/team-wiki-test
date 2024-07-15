@@ -2,17 +2,24 @@ html {
   scroll-behavior: smooth;
 
 }
+
 #markdown-content {
+  color: #4D4D4D;
+    font-family: "Helvetica Neue",
+      Arial,
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      Meiryo,
+      sans-serif;
   h1 {
     font-size: 2.4vw;
     text-align: center;
     padding-top: 8vh;
-    font-weight: bold;
+    font-weight: 800;
   }
 
   h2 {
     font-size: 1.5vw;
-    font-weight: bold;
     padding-top: 3vh;
     margin-left: 3vw;
     margin-right: 3vw;
@@ -22,7 +29,6 @@ html {
 
   h3 {
     font-size: 1.3vw;
-    font-weight: bold;
     padding-top: 3vh;
     margin-left: 3vw;
     margin-right: 3vw;
@@ -32,7 +38,6 @@ html {
 
   h4 {
     font-size: 1.2vw;
-    font-weight: bold;
     padding-top: 3vh;
     margin-left: 3vw;
     margin-right: 3vw;
@@ -120,7 +125,7 @@ html {
                                   border: 1px solid #686969;
 
     th,
-      td {
+    td {
         border: 1px solid #686969;
         padding: 0.5vw;
       }
@@ -135,6 +140,7 @@ html {
                                   margin-left: auto;
                                   margin-right: auto;
                                 }
+
                 .katex-display {
                   margin-left: 3vw;
                   margin-right: 3vw;

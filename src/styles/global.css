@@ -1,8 +1,11 @@
-@font-face {
-  font-family: "Bahnschrift";
-  src: url("/fonts/BAHNSCHRIFT.TTF") format("truetype");
-}
 
 body {
-  font-family: "Bahnschrift";
+  font-family: "Helvetica Neue",
+      Arial,
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      Meiryo,
+      sans-serif;
+    font-weight: 600;
+    color: #4D4D4D;
 }

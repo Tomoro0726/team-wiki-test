@@ -18,44 +18,44 @@ import "../styles/markdown.scss";
       crossorigin="anonymous"
     />
   </head>
-  <body class="bg-[#c6dff4]">
+  <body class="bg-[#ECF0F3]">
     <Menu />
-    <div class="text-gray-600 flex justify-center items-center" id="title">
-      <div class="h-[53vh] flex justify-center items-center">
-        <h1 class="text-center text-gray-900 text-[3vw]">
-          {frontmatter.title}
-        </h1>
-      </div>
+
+    <div class="text-gray-600 h-[40vh] flex ml-[10.5%] items-center" id="title">
+      <h1 class="text-[#4D4D4D] text-[3vw] font-extrabold mt-[70px]">
+        {frontmatter.title}
+      </h1>
     </div>
 
-    <div id="left_content">
-      <div class="w-[22%] left-[6%] pb-[2vw] fixed top-[53vh]">
+    <div class="flex justify-center">
+      <div class="w-[21%] pb-[2vw]">
         <div class="bg-[#ffffff] rounded-[1.5vw]">
           <p
-            class="text-[1.5vw] text-[#1a2023] pt-[1vw] pl-[2vw] font-bold pb-[0.6vw] ml-0"
+            class="text-[1.5vw] font-semibold text-[#4D4D4D] pt-[1vw] pl-[2vw] pb-[0.6vw] ml-0"
           >
             Contributor
           </p>
           <Contributor contributors={frontmatter} />
         </div>
-        <div class="bg-[#ffffff] rounded-[1.5vw] pb-[1vw] mt-[2vw]">
+        <div class="bg-[#ffffff] rounded-[1.5vw] pb-[1vw] mt-[1.3vw]">
           <p
-            class="text-[1.5vw] text-[#1a2023] pt-[1vw] pl-[2vw] font-bold pb-[0.6vw] ml-0"
+            class="text-[1.5vw] font-semibold text-[#4D4D4D] pt-[1vw] pl-[2vw] pb-[0.6vw] ml-0"
           >
             Index
           </p>
           <Index index={headings} />
         </div>
       </div>
-    </div>
-    <div>
-      <div
-        class="ml-[auto] mr-[6%] my-[0] bg-[#ffffff] w-[63%] rounded-[1.5vw] pb-[3vw]"
-        id="markdown-content"
-      >
-        <slot />
+      <div class="w-[56%] ml-[2%]">
+        <div
+          class="my-[0] bg-[#ffffff] rounded-[1.5vw] pb-[3vw]"
+          id="markdown-content"
+        >
+          <slot />
+        </div>
       </div>
     </div>
+
     <script is:inline src="/markdown/image.js"></script>
     <script is:inline src="/markdown/markdown.js"></script>
   </body>
