@@ -11,7 +11,7 @@ export default function Contributor(contributors: any) {
   });
 
   return (
-    <div className="flex items-center p-[1vw] pl-[2vw] pt-0">
+    <div className="flex items-center p-[1vw] pl-[1.7vw] pt-0">
       {
         member.map((item: any) => (
           <div
