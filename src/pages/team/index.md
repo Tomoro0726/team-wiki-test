@@ -2,7 +2,7 @@
 layout: '../../layouts/markdown.astro'
 title: 'Markdown design'
 ---
-# Heading1
+# Heading1Heading1
 
 This is an example of how you can structure your markdown design.
 
