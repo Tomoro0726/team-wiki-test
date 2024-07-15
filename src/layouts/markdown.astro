@@ -1,7 +1,10 @@
 ---
 // ページから渡ってきたtitleを取得
-const { frontmatter } = Astro.props;
+const { frontmatter, headings } = Astro.props;
+console.log(frontmatter);
+console.log(headings);
 import Menu from "../components/menu.tsx";
+import Writer from "../components/writer.tsx";
 import "../styles/global.css";
 import "../styles/markdown.css";
 ---
@@ -24,7 +27,15 @@ import "../styles/markdown.css";
 
     <div id="left_content">
       <div class="w-[22%] left-[6%] pb-[2vw] fixed top-[53vh]">
-        <div class="bg-[#ffffff] rounded-[1.5vw] pb-[1vw]">
+        <div class="bg-[#ffffff] rounded-[1.5vw]">
+          <p
+            class="text-[1.5vw] text-[#1a2023] pt-[1vw] pl-[2vw] font-bold pb-[0.6vw] ml-0"
+          >
+            Writer
+          </p>
+          <Writer />
+        </div>
+        <div class="bg-[#ffffff] rounded-[1.5vw] pb-[1vw] mt-[2vw]">
           <p
             class="text-[1.5vw] text-[#1a2023] pt-[1vw] pl-[2vw] font-bold pb-[0.6vw] ml-0"
           >
@@ -64,42 +75,17 @@ import "../styles/markdown.css";
             </div>
           </div>
         </div>
-        <div class="bg-[#ffffff] rounded-[1.5vw] mt-[2vw]">
-          <p
-            class="text-[1.5vw] text-[#1a2023] pt-[1vw] pl-[2vw] font-bold pb-[0.6vw] ml-0"
-          >
-            Writer
-          </p>
-          <div class="flex items-center p-[1vw] pl-[2vw] pt-0">
-            <div
-              class="w-[2.8vw] h-[2.8vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
-            >
-            </div>
-            <div
-              class="w-[2.8vw] h-[2.8vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
-            >
-            </div><div
-              class="w-[2.8vw] h-[2.8vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
-            >
-            </div><div
-              class="w-[2.8vw] h-[2.8vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
-            >
-            </div><div
-              class="w-[2.8vw] h-[2.8vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
-            >
-            </div>
-          </div>
-        </div>
       </div>
-      <div>
-        <div
-          class="ml-[auto] mr-[6%] my-[0] bg-[#ffffff] w-[63%] rounded-[1.5vw] pb-[3vw]"
-          id="markdown-content"
-        >
-          <slot />
-        </div>
+    </div>
+    <div>
+      <div
+        class="ml-[auto] mr-[6%] my-[0] bg-[#ffffff] w-[63%] rounded-[1.5vw] pb-[3vw]"
+        id="markdown-content"
+      >
+        <slot />
       </div>
     </div>
     <script is:inline src="/markdown/image.js"></script>
+    <script is:inline src="/markdown/markdown.js"></script>
   </body>
 </html>
