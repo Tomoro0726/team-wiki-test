@@ -1,10 +1,9 @@
 export default function Footer() {
     return (
-        <div className="w-full bg-[#ecf0f3]">
+        <div className="w-full bg-[#ecf0f3] mt-[6vh]">
             <div className="flex justify-center items-center">
                 <a className="flex items-center w-1/4 pt-[0.5vw] pl-[2vw] pb-[0.5vw]" href="/">
-                    <img src="/logo.png" className="w-[4.5vw] h-[4.5vw]" />
-                    <p className="ml-[15px] text-[2vw] text-[#7a7c7d]">iGEM Grand Tokyo</p>
+                    <img src="/logo.webp" className="h-[4.5vw]" />
                 </a>
             </div>
             <div className="flex justify-center items-center pt-[1vw] pb-[0.5vw] fill-[#7a7c7d]">
