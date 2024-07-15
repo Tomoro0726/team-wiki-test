@@ -1,6 +1,6 @@
 export default function Menu() {
   return (
-    <div className="flex justify-between items-center fixed w-full bg-[#ecf0f3] font-bold">
+    <div className="flex justify-between items-center fixed w-full bg-[#ecf0f3] font-bold z-50">
       <a className="flex items-center w-1/4 pt-[0.5vw] pl-[2vw] pb-[0.5vw]" href="/">
         <img src="/logo.png" className="w-[4.5vw] h-[4.5vw]" />
         <p className="ml-[15px] text-[1.5vw] text-[#7a7c7d] font-bold">iGEM Grand Tokyo</p>

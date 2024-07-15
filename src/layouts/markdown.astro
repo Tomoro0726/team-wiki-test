@@ -1,5 +1,4 @@
 ---
-// ページから渡ってきたtitleを取得
 const { frontmatter, headings } = Astro.props;
 import Menu from "../components/menu.tsx";
 import Contributor from "../components/contributor.tsx";
@@ -12,16 +11,21 @@ import "../styles/markdown.scss";
   <head>
     <meta charset="utf-8" />
     <title>{frontmatter.title}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+      integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+      crossorigin="anonymous"
+    />
   </head>
   <body class="bg-[#c6dff4]">
     <Menu />
-    <div
-      class="text-gray-600 flex justify-center items-center h-[53vh]"
-      id="title"
-    >
-      <h1 class="text-center text-gray-900 text-[3vw]">
-        {frontmatter.title}
-      </h1>
+    <div class="text-gray-600 flex justify-center items-center" id="title">
+      <div class="h-[53vh] flex justify-center items-center">
+        <h1 class="text-center text-gray-900 text-[3vw]">
+          {frontmatter.title}
+        </h1>
+      </div>
     </div>
 
     <div id="left_content">
