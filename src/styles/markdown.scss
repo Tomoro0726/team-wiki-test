@@ -4,6 +4,7 @@ html {
 }
 
 #markdown-content {
+  padding-top: 8vh;
   color: #4D4D4D;
     font-family: "Helvetica Neue",
       Arial,
@@ -14,7 +15,6 @@ html {
   h1 {
     font-size: 2.4vw;
     text-align: center;
-    padding-top: 8vh;
     font-weight: 800;
   }
 
@@ -24,7 +24,7 @@ html {
     margin-left: 3vw;
     margin-right: 3vw;
     padding-bottom: 1vh;
-    border-bottom: 2px solid #686969;
+    border-bottom: 3px solid #ece9e9;
   }
 
   h3 {
@@ -33,7 +33,7 @@ html {
     margin-left: 3vw;
     margin-right: 3vw;
     padding-bottom: 1vh;
-    border-bottom: 2px solid #686969;
+    border-bottom: 3px solid #ece9e9;
   }
 
   h4 {
@@ -55,8 +55,10 @@ html {
     text-align: left;
     margin-left: 3vw;
     margin-right: 3vw;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     font-weight: normal;
+    line-height: 2vw;
+      margin-top: 30px;
 
     code {
       background-color: #f4f4f4;
@@ -100,7 +102,7 @@ html {
                                   margin-right: 3vw;
                                   padding-top: 1vh;
                                   padding-bottom: 1vh;
-                                  border-left: 5px solid #686969;
+                                  border-left: 5px solid #efefef;
                                   background-color: #f4f4f4;
                                   border-radius: 5px;
                                   padding-left: 0;
@@ -122,11 +124,11 @@ html {
                                   margin-right: 3vw;
                                   border-collapse: collapse;
                                   border-spacing: 0;
-                                  border: 1px solid #686969;
+                                  border: 1px solid #efefef;
 
     th,
     td {
-        border: 1px solid #686969;
+        border: 1px solid #efefef;
         padding: 0.5vw;
       }
 

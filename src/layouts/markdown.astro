@@ -22,24 +22,24 @@ import "../styles/markdown.scss";
     <Menu />
 
     <div class="text-gray-600 h-[40vh] flex ml-[10.5%] items-center" id="title">
-      <h1 class="text-[#4D4D4D] text-[3vw] font-extrabold mt-[70px]">
+      <h1 class="text-[#4D4D4D] text-[4vw] font-extrabold mt-[70px]">
         {frontmatter.title}
       </h1>
     </div>
 
     <div class="flex justify-center">
       <div class="w-[21%] pb-[2vw]">
-        <div class="bg-[#ffffff] rounded-[1.5vw]">
+        <div class="bg-[#ffffff] rounded-[0.2vw]">
           <p
-            class="text-[1.5vw] font-semibold text-[#4D4D4D] pt-[1vw] pl-[2vw] pb-[0.6vw] ml-0"
+            class="text-[1vw] font-semibold text-[#4D4D4D] pt-[1.1vw] pl-[2vw] pb-[0.6vw] ml-0"
           >
             Contributor
           </p>
           <Contributor contributors={frontmatter} />
         </div>
-        <div class="bg-[#ffffff] rounded-[1.5vw] pb-[1vw] mt-[1.3vw]">
+        <div class="bg-[#ffffff] rounded-[0.2vw] pb-[1vw] mt-[1.3vw]">
           <p
-            class="text-[1.5vw] font-semibold text-[#4D4D4D] pt-[1vw] pl-[2vw] pb-[0.6vw] ml-0"
+            class="text-[1vw] font-semibold text-[#4D4D4D] pt-[1.1vw] pl-[2vw] pb-[0.6vw] ml-0"
           >
             Index
           </p>
@@ -48,7 +48,7 @@ import "../styles/markdown.scss";
       </div>
       <div class="w-[56%] ml-[2%]">
         <div
-          class="my-[0] bg-[#ffffff] rounded-[1.5vw] pb-[3vw]"
+          class="my-[0] bg-[#ffffff] rounded-[0.2vw] pb-[3vw]"
           id="markdown-content"
         >
           <slot />
