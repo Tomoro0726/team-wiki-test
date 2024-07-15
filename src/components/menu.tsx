@@ -7,7 +7,7 @@ export default function Menu() {
         <p className="ml-[15px] text-[1.5vw] text-[#7a7c7d] font-bold">iGEM Grand Tokyo</p>
       </a>
       <div className="flex items-center pt-[0.5vw] pr-[3vw]">
-        <a className="no-underline text-[#7a7c7d] text-[1.5vw] mr-[3vw]" href="/public/index.html">TEAM</a>
+        <a className="no-underline text-[#7a7c7d] text-[1.5vw] mr-[3vw]" href="/team">TEAM</a>
         <a className="no-underline text-[#7a7c7d] text-[1.5vw] mr-[3vw]" href="/project">PROJECT</a>
         <a className="no-underline text-[#7a7c7d] text-[1.5vw] mr-[3vw]" href="/weblab">WET LAB</a>
         <a className="no-underline text-[#7a7c7d] text-[1.5vw] mr-[3vw]" href="/public/team.html">DRY LAB</a>
