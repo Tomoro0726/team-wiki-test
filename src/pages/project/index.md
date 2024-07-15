@@ -5,10 +5,13 @@ title: 'article01ページ'
 # How to make
 ## Public page
 This page contains an overview of the cultural festival, a timetable, a map, and more.
-https://github.com/gladevise/remark-link-card
+`https://github.com/gladevise/remark-link-card`
 
+```sh
+npm create astro@latest -- --template starlight
+```
 ## My page
-You can use various functions such as issuing tickets and downloading QR codes for vouchers from My page.
+You can use various functions such as issuing tickets and downloading QR codes for vouchers **from My page**.
 # Development objectives
 Development objectives from the perspective of each user.
 ## All users

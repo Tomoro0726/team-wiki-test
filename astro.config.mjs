@@ -8,6 +8,6 @@ import remarkBreaks from 'remark-breaks';
 export default defineConfig({
   integrations: [react(), tailwind(), mdx()],
   markdown: {
-    remarkPlugins: [remarkBreaks],
+    remarkPlugins: [remarkBreaks,],
   }
 });
