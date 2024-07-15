@@ -4,30 +4,14 @@ title: 'article01ページ'
 ---
 
 # Text
-TextTextTextTextTextTextTextTextTextTextTextText
-> This is Quote from [Google](https://google.com)
-
+TextTextTextTextTextTextTextTextTextTextTextTextz
 ## Text
-TextTextTextTextTextTextTextTextTextTextTextText[Google](https://google.com)
-
-https://google.com
-<br>
-`[Example` Domain](https://www.example.com)
-
-This is [an example reference-style link][1].
-[1]: http://example.com/
-
+TextTextTextTextTextTextTextTextTextTextTextText
 
 ### Text
 *Text*Text**Text**TextTextTextTextTextTextTextTextText
-This is [an example reference-style link][].
-
-[an example reference-style link]: http://example.com/
-
 
 #### Text
-[label]: URI/address "link title"
-
 TextTextTextTextTextTextTextTextTextTextTextText
 ```sh
 npm create astro@latest -- --template starlight

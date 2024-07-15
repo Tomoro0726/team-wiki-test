@@ -37,7 +37,6 @@
 
   p {
     text-align: left;
-    padding-top: 1vh;
     margin-left: 3vw;
     margin-right: 3vw;
     font-size: 1.3vw;
@@ -68,4 +67,26 @@
     border-radius: 10px;
     margin-top: 3vh;
   }
+blockquote {
+  width: 90%;
+  font-size: 1.3vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  border-left: 5px solid #686969;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  padding-left: 0;
+}
+
+a {
+  color: #0000ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:visited {
+  color: #000080;
+}
 }
