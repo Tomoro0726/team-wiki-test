@@ -1,14 +1,20 @@
 ---
+import Menu from "../components/menu.tsx";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Markdown Design example</title>
+	</head>
+	<body class="m-0 p-0 bg-gray-200">
+		<Menu />
+		<div class="bg-black h-screen"></div>
+		<div class="p-8 text-center text-blue-400 underline h-screen">
+			コンテンツ
+		</div>
+	</body>
 </html>

@@ -1,0 +1,103 @@
+---
+// ページから渡ってきたtitleを取得
+const { frontmatter } = Astro.props;
+import Menu from "../components/menu.tsx";
+import "../styles/global.css";
+import "../styles/markdown.css";
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body class="bg-[#c6dff4]">
+    <Menu />
+    <div
+      class="text-gray-600 flex justify-center items-center h-[53vh]"
+      id="title"
+    >
+      <h1 class="text-center text-gray-900 text-[3vw]">
+        {frontmatter.title}
+      </h1>
+    </div>
+    <div id="left_content">
+      <div class="w-[22%] left-[6%] pb-[2vw] fixed top-[53vh]">
+        <div class="bg-[#ffffff] rounded-[1.5vw] pb-[1vw]">
+          <p
+            class="text-[1.5vw] text-[#1a2023] pt-[1vw] pl-[2vw] font-bold pb-[0.6vw] ml-0"
+          >
+            Index
+          </p>
+          <div>
+            <div class="flex items-start ml-[2vw] h-min">
+              <div class="flex justify-center [flex-flow:column] items-center">
+                <img class="w-[1.4vw] h-[1.4vw]" src="/markdown/index_1.svg" />
+                <img src="/markdown/line.svg" class="w-[2px]" />
+              </div>
+              <a class="ml-[9px] no-underline text-[1vw]">Title</a>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-start ml-[2vw] h-min">
+              <div class="flex justify-center [flex-flow:column] items-center">
+                <img class="w-[1.4vw] h-[1.4vw]" src="/markdown/index_1.svg" />
+                <img src="/markdown/line.svg" class="w-[2px]" />
+              </div>
+              <a class="ml-[9px] no-underline text-[1vw]">Title</a>
+            </div>
+          </div><div>
+            <div class="flex items-start ml-[2vw] h-min">
+              <div class="flex justify-center [flex-flow:column] items-center">
+                <img class="w-[1.4vw] h-[1.4vw]" src="/markdown/index_1.svg" />
+                <img src="/markdown/line.svg" class="w-[2px]" />
+              </div>
+              <a class="ml-[9px] no-underline text-[1vw]">Title</a>
+            </div>
+          </div><div>
+            <div class="flex items-start ml-[2vw] h-min">
+              <div class="flex justify-center [flex-flow:column] items-center">
+                <img class="w-[1.4vw] h-[1.4vw]" src="/markdown/index_1.svg" />
+              </div>
+              <a class="ml-[9px] no-underline text-[1vw]">Title</a>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#ffffff] rounded-[1.5vw] mt-[2vw]">
+          <p
+            class="text-[1.5vw] text-[#1a2023] pt-[1vw] pl-[2vw] font-bold pb-[0.6vw] ml-0"
+          >
+            Writer
+          </p>
+          <div class="flex items-center p-[1vw] pl-[2vw] pt-0">
+            <div
+              class="w-[2.8vw] h-[2.8vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
+            >
+            </div>
+            <div
+              class="w-[2.8vw] h-[2.8vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
+            >
+            </div><div
+              class="w-[2.8vw] h-[2.8vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
+            >
+            </div><div
+              class="w-[2.8vw] h-[2.8vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
+            >
+            </div><div
+              class="w-[2.8vw] h-[2.8vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="ml-[auto] mr-[6%] my-[0] bg-[#ffffff] w-[63%] rounded-[1.5vw] pb-[3vw]"
+          id="markdown-content"
+        >
+          <slot />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
