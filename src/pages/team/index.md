@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/markdown.astro'
 title: 'Markdown design'
-Contributor: ["contributor1","contributor1","contributor1","contributor2"]
+Contributor: ["contributor1","contributor1","contributor2","contributor13"]
 ---
 # Heading1Heading1
 
