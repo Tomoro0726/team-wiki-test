@@ -9,6 +9,17 @@
 
 
 # 執筆者の皆様へ
-## GitHubアカウントの作成
+## 執筆環境の構築
+### GitHub
 
-## CloudFlareアカウントの作成
+### Visual Studio Code
+
+### Gitのセットアップ
+
+## 執筆のルール
+
+### branchルール
+### Issuesでの問題点の共有
+### サポートしているMarkdown記法
+### 画像
+### 動画
