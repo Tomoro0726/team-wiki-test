@@ -44,6 +44,9 @@ html {
     margin-left: 3vw;
     margin-right: 3vw;
     margin-top: 1vh;
+    &:hover {
+      cursor: zoom-in;
+    }
   }
 
   p {
