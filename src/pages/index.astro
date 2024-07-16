@@ -1,22 +1,24 @@
 ---
-import Menu from "../components/menu.tsx";
-import Footer from "../components/footer";
-import "../styles/global.css";
+import Menu from '../components/menu.tsx';
+import Footer from '../components/footer';
+import '../styles/global.css';
+import test from '../assets/heavy-image.JPG';
+import { Image } from 'astro:assets';
 ---
 
 <!doctype html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Markdown Design example</title>
-	</head>
-	<body class="m-0 p-0 bg-gray-200">
-		<Menu />
-		<div class="bg-black h-screen"></div>
-		<div class="p-8 text-center text-blue-400 underline h-screen">
-			コンテンツ
-		</div>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Design example</title>
+  </head>
+  <body class="m-0 p-0 bg-gray-200">
+    <Menu />
+    <div class="bg-black h-screen"></div>
+    <div class="p-8 text-center text-blue-400 underline h-screen">
+      <Image src={test} alt="test" />
+    </div>
+    <Footer />
+  </body>
 </html>
