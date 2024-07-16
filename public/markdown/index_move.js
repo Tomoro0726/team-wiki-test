@@ -24,7 +24,7 @@ function func() {
         console.log('test');
         //#indexの上のマージンを変更
         document.getElementById('index').style.marginTop =
-          scroll - titleHeight - menuHeight - contributorHeight + 'px';
+          scroll - titleHeight - menuHeight - contributorHeight + 20 + 'px';
       }else{
         //indexの上のマージンを1.3vw
         document.getElementById('index').style.marginTop = '1.3vw';
