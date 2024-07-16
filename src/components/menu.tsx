@@ -33,7 +33,7 @@ export default function Menu() {
         </a>
         <a
           className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]"
-          href="/public/team.html"
+          href="/dry"
         >
           DRY
         </a>
