@@ -13,19 +13,24 @@ var contributor = document.getElementById('contributor');
 var contributorHeight = contributor.clientHeight;
 console.log(titleHeight + menuHeight + contributorHeight);
 
+var ticking = false;
+
 function func() {
-  clearTimeout(timer);
-  timer = setTimeout(function () {
-    // スクロール量を取得
-    var scroll = window.pageYOffset;
-    if (scroll >= titleHeight + menuHeight + contributorHeight) {
-      console.log('test');
-      //#indexの上のマージンを変更
-      document.getElementById('index').style.marginTop =
-        scroll - titleHeight - menuHeight - contributorHeight + 'px';
-    }
-    console.log(scroll);
-  }, FPS);
+  if (!ticking) {
+    requestAnimationFrame(function () {
+      ticking = false;
+      var scroll = window.pageYOffset;
+      if (scroll >= titleHeight + menuHeight + contributorHeight) {
+        console.log('test');
+        //#indexの上のマージンを変更
+        document.getElementById('index').style.marginTop =
+          scroll - titleHeight - menuHeight - contributorHeight + 'px';
+      }
+      console.log(scroll);
+    });
+    ticking = true;
+  }
 }
+
 
 document.addEventListener('scroll', func, { passive: true });
