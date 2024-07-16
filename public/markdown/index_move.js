@@ -11,7 +11,6 @@ var menuHeight = menu.clientHeight;
 //#contributorの高さを取得
 var contributor = document.getElementById('contributor');
 var contributorHeight = contributor.clientHeight;
-console.log(titleHeight + menuHeight + contributorHeight);
 
 var ticking = false;
 document.getElementById('index').style.marginTop = '1.3vw';
@@ -21,15 +20,13 @@ function func() {
       ticking = false;
       var scroll = window.pageYOffset;
       if (scroll >= titleHeight + menuHeight + contributorHeight) {
-        console.log('test');
         //#indexの上のマージンを変更
         document.getElementById('index').style.marginTop =
           scroll - titleHeight - menuHeight - contributorHeight + 20 + 'px';
-      }else{
+      } else {
         //indexの上のマージンを1.3vw
         document.getElementById('index').style.marginTop = '1.3vw';
       }
-      console.log(scroll);
     });
     ticking = true;
   }
