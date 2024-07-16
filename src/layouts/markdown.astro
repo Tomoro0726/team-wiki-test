@@ -1,11 +1,11 @@
 ---
 const { frontmatter, headings } = Astro.props;
-import Menu from "../components/menu.tsx";
-import Contributor from "../components/contributor.tsx";
-import Index from "../components/index.tsx";
-import "../styles/global.css";
-import "../styles/markdown.scss";
-import Footer from "../components/footer.tsx";
+import Menu from '../components/menu.tsx';
+import Contributor from '../components/contributor.tsx';
+import Index from '../components/index.tsx';
+import '../styles/global.css';
+import '../styles/markdown.scss';
+import Footer from '../components/footer.tsx';
 ---
 
 <html lang="ja">
@@ -38,7 +38,7 @@ import Footer from "../components/footer.tsx";
           </p>
           <Contributor contributors={frontmatter} />
         </div>
-        <div class="bg-[#ffffff] rounded-[0.2vw] pb-[1vw] mt-[1.3vw]">
+        <div class="bg-[#ffffff] rounded-[0.2vw] pb-[2.1vw] mt-[1.3vw]">
           <p
             class="text-[1vw] font-[600] text-[#4D4D4D] pt-[2vw] pl-[1.7vw] pb-[0.6vw] ml-0"
           >
