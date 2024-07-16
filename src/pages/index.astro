@@ -1,9 +1,9 @@
 ---
-import Menu from '../components/menu.tsx';
 import Footer from '../components/footer';
 import '../styles/global.css';
 import test from '../assets/test.JPG';
 import { Image } from 'astro:assets';
+import Header from '../components/header.astro';
 ---
 
 <!doctype html>
@@ -14,7 +14,7 @@ import { Image } from 'astro:assets';
     <title>Markdown Design example</title>
   </head>
   <body class="m-0 p-0 bg-gray-200">
-    <Menu />
+    <Header />
     <div class="bg-black h-screen"></div>
     <div class="p-8 text-center text-blue-400 underline h-screen">
       <Image src={test} alt="test" format="avif" width={1080} />
