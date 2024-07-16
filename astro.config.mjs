@@ -13,6 +13,8 @@ import playformInline from '@playform/inline';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
+  compressHTML: true,
   integrations: [
     react(),
     tailwind(),
