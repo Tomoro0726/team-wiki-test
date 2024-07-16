@@ -4,17 +4,14 @@ title: 'article01ページ'
 Contributor: ["contributor1","contributor2"]
 
 ---
-import Chart from './chart.astro'
 
-## Example Chart (hydrated)
 
-<Chart />
 
 import ExampleChart from './example-chart.jsx'
 
-## Example Chart (SSG)
+## Example Chart (not SSG)
 
-<ExampleChart />
+<ExampleChart client:load />
 
 
 

@@ -56,17 +56,11 @@ const data = [
 ]
 
 export default () => (
-  <div>
+  <div class="chart">
     <LineChart
       width={500}
       height={300}
       data={data}
-      margin={{
-        top: 10,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
