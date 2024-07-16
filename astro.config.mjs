@@ -40,4 +40,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkBreaks],
   },
+  image: {
+    remotePatterns: [{ protocol: 'https' }],
+  },
 });
