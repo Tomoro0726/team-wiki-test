@@ -1,3 +1,5 @@
+import { Picture, Image } from 'astro:assets';
+
 export default function Menu() {
   return (
     <div
