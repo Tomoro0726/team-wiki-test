@@ -10,12 +10,27 @@ import rehypeImg2pic from "astro-rehype-img2pic";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), mdx({
-    remarkPlugins: [remarkMath],
-    // relevant
-    rehypePlugins: [rehypeKatex] // relevant
-  }), rehypeImg2pic()],
+  integrations: [
+    react(),
+    tailwind(),
+    mdx({
+      remarkPlugins: [remarkMath],
+      // relevant
+      rehypePlugins: [rehypeKatex], // relevant
+    }),
+    rehypeImg2pic({
+      folderName: 'img2pic',
+      formats: ['avif', 'webp'],
+      qualities: [60, 80],
+      sizes: [
+        '(max-width: 768px) 100vw, 320px',
+        '(max-width: 768px) 100vw, 320px',
+      ],
+      widths: [720, 1920],
+      includeOriginalImage: false,
+    }),
+  ],
   markdown: {
-    remarkPlugins: [remarkBreaks]
-  }
+    remarkPlugins: [remarkBreaks],
+  },
 });
