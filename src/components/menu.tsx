@@ -1,15 +1,46 @@
 export default function Menu() {
   return (
-    <div className="flex justify-between items-center bg-[#ECF0f3] p-4 font-bold z-50">
-      <a className="flex items-center w-1/4 pt-[0.5vw] pl-[2vw] pb-[0.5vw]" href="/">
+    <div
+      id="menu"
+      className="flex justify-between items-center bg-[#ECF0f3] p-4 font-bold z-50"
+    >
+      <a
+        className="flex items-center w-1/4 pt-[0.5vw] pl-[2vw] pb-[0.5vw]"
+        href="/"
+      >
         <img src="/logo.webp" className="h-[3vw]" />
       </a>
       <div className="flex items-center pt-[0.5vw] pr-[1vw]">
-        <a className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]" href="/team">TEAM</a>
-        <a className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]" href="/project">PROJECT</a>
-        <a className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]" href="/weblab">WET</a>
-        <a className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]" href="/public/team.html">DRY</a>
-        <a className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]" href="/public/contact.html">HUMAN PRACTICE</a>
+        <a
+          className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]"
+          href="/team"
+        >
+          TEAM
+        </a>
+        <a
+          className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]"
+          href="/project"
+        >
+          PROJECT
+        </a>
+        <a
+          className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]"
+          href="/weblab"
+        >
+          WET
+        </a>
+        <a
+          className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]"
+          href="/public/team.html"
+        >
+          DRY
+        </a>
+        <a
+          className="no-underline text-[#4D4D4D] text-[1.3vw] mr-[3vw]"
+          href="/public/contact.html"
+        >
+          HUMAN PRACTICE
+        </a>
       </div>
     </div>
   );
