@@ -4,10 +4,15 @@ export default function Index(index: any) {
     indexList[i].text = indexList[i].text.replace(/<[^>]*>?/gm, '');
   }
   indexList = indexList.filter((item: any) => item.depth !== 4);
+
+  //#footnote-labelを削除
+  indexList = indexList.filter((item: any) => item.slug !== 'footnote-label');
   //配列の最後だけを取得
   let last = indexList[indexList.length - 1];
+
   //配列の最後を削除
   indexList.pop();
+
   return (
     <div>
       {indexList.map((item: any, index: any) => (
