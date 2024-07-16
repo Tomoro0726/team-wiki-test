@@ -16,6 +16,8 @@ export default defineConfig({
     react(),
     tailwind(),
     mdx({
+      remarkPlugins: [remarkBreaks],
+
       remarkPlugins: [remarkMath],
       // relevant
       rehypePlugins: [rehypeKatex], // relevant
