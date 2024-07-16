@@ -4,6 +4,20 @@ title: 'article01ページ'
 Contributor: ["contributor1","contributor2"]
 
 ---
+import Chart from './chart.astro'
+
+## Example Chart (hydrated)
+
+<Chart />
+
+import ExampleChart from './example-chart.jsx'
+
+## Example Chart (SSG)
+
+<ExampleChart />
+
+
+
 ## 自動リンク
 
 www.example.com
@@ -29,8 +43,3 @@ GFM[^2]注釈の2番
 | 指定なし | 左揃え | 右揃え | 中央揃え |
 | --- | :--- | ---: | :---: |
 | a | b | c | d |
-
-## タスクリスト
-
-- [ ] タスク 1
-- [x] タスク 2
