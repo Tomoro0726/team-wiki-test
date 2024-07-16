@@ -18,10 +18,7 @@ export default function Index(index: any) {
       {indexList.map((item: any, index: any) => (
         <div key={index} className={`flex items-start ml-[1.7vw] h-min`}>
           <div className="flex justify-center [flex-flow:column] items-center align-middle">
-            <img
-              className="w-[1.1vw] h-[1.1vw]"
-              src={'/markdown/index_3.svg'}
-            />
+            <img className="w-[1.1vw] h-[1.1vw]" src={'/markdown/index_3.svg'} />
             <img src="/markdown/line.svg" className="h-[24px]" />
           </div>
           <a
