@@ -3,12 +3,13 @@ layout: '../../layouts/markdown.astro'
 title: 'Markdown design'
 Contributor: ["contributor1","contributor2"]
 ---
-
+import test from '../../assets/test.JPG';
+import { Image } from 'astro:assets';
 
 # Test
+<Image src={test} alt="test" format="avif" width={1080} />
 
 このように重めの画像を読み込んでも最適化が行われない。
-![満天の星空](/assets/heavy.JPG)
 
 
 ## LaTeX Example
