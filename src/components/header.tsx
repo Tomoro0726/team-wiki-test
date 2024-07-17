@@ -1,37 +1,37 @@
 export default function Header () {
 
   const headers: { [header_name: string]: Array<string> } = {
-    "team" : [
-      "team",
-      "attributions"
+    "Team" : [
+      "Team",
+      "Attributions"
     ],
-    "project" : [
-      "contribution",
-      "description"
+    "Project" : [
+      "Contribution",
+      "Description"
     ],
-    "wet" : [
-      "plant",
-      "safety",
-      "experiments",
-      "notebook",
-      "results",
-      "engineering"
+    "Wet" : [
+      "Plant",
+      "Safety",
+      "Experiments",
+      "Notebook",
+      "Results",
+      "Engineering"
     ],
     "Dry" : [
-      "hardware",
-      "measurement",
-      "model",
-      "software"
+      "Hardware",
+      "Measurement",
+      "Model",
+      "Software"
     ],
-    "safety" : [
-      "safety"
+    "Safety" : [
+      "Safety"
     ],
     "Human Practices" : [
-      "human-practices",
-      "education",
-      "entrepreneurship",
-      "inclusivity",
-      "sustainable"
+      "Human-practices",
+      "Education",
+      "Entrepreneurship",
+      "Inclusivity",
+      "Sustainable"
     ]
   }
   
@@ -47,17 +47,26 @@ export default function Header () {
 
         {
           Object.keys(headers).map((header) => (
-            <li className="menu-item drop-menu">
-              <a href={`/${header}`}>{header} &or;</a>
-              <ul className="drop-menu-list">
-                {
-                  headers[header].map((subHeader) => (
-                    <li className="drop-menu-item">
-                      <a href={`/${subHeader}`}>{subHeader}</a>
-                    </li>
-                  ))
-                }
-              </ul>
+            //サブヘッダが複数ある時はdrop-menuクラスを追加
+            <li className={`menu-item ${headers[header].length > 1 ? 'drop-menu' : ''}`}>
+              {
+                headers[header].length > 1 ? ( // 親ヘッダにサブヘッダが複数ある時
+                  <>
+                    <a href={`/${header}`}>{header} &or;</a>
+                    <ul className="drop-menu-list">
+                      {
+                        headers[header].map((subHeader) => (
+                          <li className="drop-menu-item">
+                            <a href={`/${subHeader}`}>{subHeader}</a>
+                          </li>
+                        ))
+                      }
+                    </ul>
+                  </>
+                ) : ( // 親ヘッダにサブヘッダが1つの時
+                  <a href={`/${headers[header][0]}`}>{headers[header][0]}</a>
+                )
+              }
             </li>
           ))
         }
