@@ -1,0 +1,85 @@
+---
+layout: '../layouts/markdown.astro'
+title: 'Markdown design'
+Contributor: ["contributor0","contributor2"]
+---
+import test from '../assets/test.JPG';
+import { Image } from 'astro:assets';
+
+# Test
+<Image src={test} alt="test" format="avif" width={1080} />
+
+このように重めの画像を読み込んでも最適化が行われない。
+
+
+## LaTeX Example
+
+You can also include LaTeX equations in your markdown design.
+
+Here is an example of an inline equation: $E=mc^2$And here is an example of a displayed equation:
+$E=mc^2$
+
+`Inline Code`
+
+LaTeX equations can be a powerful tool for expressing mathematical concepts in your markdown documents.
+
+## 動画のテスト
+<iframe title="iGEM Grand Jamboree | 2023 Aftermovie | 20th Year of iGEM" src="https://video.igem.org/videos/embed/5703ce0f-0b7f-4d69-99ef-4a1d4e200901" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+
+### Heading 3
+This is an example of how you can structure your markdown design.
+
+#### Heading 4
+This is an example of how you can structure your markdown design.
+
+## Bullet
+
+- Bullet Point 1
+- Bullet Point 2
+- Bullet Point 3
+
+## Numbered
+
+1. Numbered Item 1
+2. Numbered Item 2
+3. Numbered Item 3
+
+## Text decoration
+
+
+**Bold Text**
+
+
+
+*Italic Text*
+
+## Link
+
+
+[Link to Google](https://www.google.com)
+## images
+
+![](https://storage.googleapis.com/zenn-user-upload/eb3bcb239c9a-20231231.png)
+
+You can also include images.
+
+> Blockquote
+
+You can use blockquotes to highlight important information.
+
+`Inline Code`
+
+You can include inline code snippets.
+
+```python
+def hello_world():
+  print("Hello, World!")
+```
+
+You can also include code blocks.
+
+| TH | TH |
+| ---- | ---- |
+| TD | TD |
+| TD | TD |
+
