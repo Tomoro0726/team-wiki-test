@@ -12,7 +12,7 @@ export default function Header() {
 		],
 		DRY: ["Hardware", "Measurement", "Model", "Software"],
 		SAFETY: ["SAFETY"],
-		"HUMAN PRACTICES": [
+		"HUMAN-PRACTICES": [
 			"Human-practices",
 			"Education",
 			"Entrepreneurship",
@@ -44,18 +44,19 @@ export default function Header() {
 					>
 						{headers[header].length > 1 ? ( // 親ヘッダにサブヘッダが複数ある時
 							<>
-								<a href={`/${header}`}>{header} &or;</a>
+								<a href={`/${header.toLowerCase()}`} className="font-extrabold">{header.toUpperCase()} &or;</a>
+								{/* URLはLowerで、headerはUpperで */}
 								<div className="drop-menu-list">
 									{headers[header].map((subHeader) => (
 										<div className="drop-menu-item">
-											<a href={`/${subHeader}`}>{subHeader}</a>
+											<a href={`/${subHeader.toLowerCase()}`} className="font-semibold">{subHeader.charAt(0).toUpperCase() + subHeader.slice(1).toLowerCase()}</a>
 										</div>
 									))}
 								</div>
 							</>
 						) : (
 							// 親ヘッダにサブヘッダが1つの時
-							<a href={`/${headers[header][0]}`}>{headers[header][0]}</a>
+							<a href={`/${headers[header][0].toLowerCase}`}>{headers[header][0].toUpperCase()}</a>
 						)}
 					</div>
 				))}
