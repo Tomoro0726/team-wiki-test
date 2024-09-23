@@ -1,5 +1,4 @@
 export default function Contributor(contributors: any) {
-  console.log(contributors);
   let member = contributors["contributors"]["Contributor"];
   //重複排除
   member = member.filter((x: any, i: any, self: any) => self.indexOf(x) === i);
