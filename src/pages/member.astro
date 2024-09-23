@@ -4,6 +4,26 @@ import Header from "../components/header.tsx";
 import "../styles/global.css";
 import "../styles/markdown.scss";
 import Footer from "../components/footer.tsx";
+import Image from "astro/components/Image.astro";
+
+//contributor0からcontributor16までの画像をimport
+import Contributor1 from "../assets/contributors/contributor0.webp";
+import Contributor2 from "../assets/contributors/contributor1.webp";
+import Contributor3 from "../assets/contributors/contributor2.webp";
+import Contributor4 from "../assets/contributors/contributor3.webp";
+import Contributor5 from "../assets/contributors/contributor4.webp";
+import Contributor6 from "../assets/contributors/contributor5.webp";
+import Contributor7 from "../assets/contributors/contributor6.webp";
+import Contributor8 from "../assets/contributors/contributor7.webp";
+import Contributor9 from "../assets/contributors/contributor8.webp";
+import Contributor10 from "../assets/contributors/contributor9.webp";
+import Contributor11 from "../assets/contributors/contributor10.webp";
+import Contributor12 from "../assets/contributors/contributor11.webp";
+import Contributor13 from "../assets/contributors/contributor12.webp";
+import Contributor14 from "../assets/contributors/contributor13.webp";
+import Contributor15 from "../assets/contributors/contributor14.webp";
+import Contributor16 from "../assets/contributors/contributor15.webp";
+import Contributor17 from "../assets/contributors/contributor16.webp";
 ---
 
 <html lang="ja">
@@ -23,9 +43,14 @@ import Footer from "../components/footer.tsx";
     <div class="text-gray-600 h-[40vh] flex ml-[10.5%] items-center" id="title">
       <h1 class="text-[#4D4D4D] text-[4vw] font-[800] mt-[70px]">Members</h1>
     </div>
-    <div class="m-[1vh]">
-      <div class="flex justify-center">
-        <h2 class="text-gray-600 text-[1vw] font-[600]">WET</h2>
+    <div class="m-[1vh] flex justify-center">
+      <div class="w-[80%]">
+        <h2 class="text-gray-600 text-[1.3vw] font-[600] text-center">WET</h2>
+        <div class="flex justify-between">
+          <Image src={Contributor1} alt="WET" />
+          <Image src={Contributor2} alt="WET" />
+          <Image src={Contributor3} alt="WET" />
+        </div>
       </div>
     </div>
 
