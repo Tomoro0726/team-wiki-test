@@ -1,10 +1,10 @@
 {
-  "recommendations": [
-    "astro-build.astro-vscode",
-    "unifiedjs.vscode-mdx",
-    "bradlc.vscode-tailwindcss",
-    "sibiraj-s.vscode-scss-formatter",
-    "biomejs.biome"
-  ],
-  "unwantedRecommendations": []
+	"recommendations": [
+		"astro-build.astro-vscode",
+		"unifiedjs.vscode-mdx",
+		"bradlc.vscode-tailwindcss",
+		"sibiraj-s.vscode-scss-formatter",
+		"biomejs.biome"
+	],
+	"unwantedRecommendations": []
 }
