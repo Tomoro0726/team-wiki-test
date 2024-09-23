@@ -1,0 +1,37 @@
+---
+const { frontmatter, headings } = Astro.props;
+import Header from "../components/header.tsx";
+import "../styles/global.css";
+import "../styles/markdown.scss";
+import Footer from "../components/footer.tsx";
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Members</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+      integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-[#ECF0F3]">
+    <Header />
+
+    <div class="text-gray-600 h-[40vh] flex ml-[10.5%] items-center" id="title">
+      <h1 class="text-[#4D4D4D] text-[4vw] font-[800] mt-[70px]">Members</h1>
+    </div>
+    <div class="m-[1vh]">
+      <div class="flex justify-center">
+        <h2 class="text-gray-600 text-[1vw] font-[600]">WET</h2>
+      </div>
+    </div>
+
+    <Footer />
+    <script is:inline src="/markdown/image.js"></script>
+    <script is:inline src="/markdown/index_move.js"></script>
+    <script is:inline src="/markdown/index_highlight.js"></script>
+  </body>
+</html>
