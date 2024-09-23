@@ -3,8 +3,8 @@ const { frontmatter, headings } = Astro.props;
 import Header from "../components/header.tsx";
 import "../styles/global.css";
 import "../styles/markdown.scss";
-import Footer from "../components/footer.tsx";
 import Image from "astro/components/Image.astro";
+import Footer from "../components/footer.tsx";
 
 //contributor0からcontributor16までの画像をimport
 import Contributor1 from "../assets/contributors/contributor0.webp";
@@ -47,7 +47,7 @@ import Contributor17 from "../assets/contributors/contributor16.webp";
       <div class="w-[80%]">
         <h2 class="text-gray-600 text-[1.3vw] font-[600] text-center">WET</h2>
         <div class="flex justify-between">
-          <Image class="w-[20vw]" src={Contributor1} alt="WET" />
+          <Image class="w-[20vw]" src={Contributor2} alt="WET" />
           <Image class="w-[20vw]" src={Contributor2} alt="WET" />
           <Image class="w-[20vw]" src={Contributor3} alt="WET" />
         </div>
