@@ -33,9 +33,9 @@ export default function Header() {
 				<img src="/logo.webp" className="h-[3vw]" />
 			</a>
 			<ul className="menu-list">
-				<li className="menu-item">
+				<div className="menu-item">
 					<a href="/">HOME</a>
-				</li>
+				</div>
 
 				{Object.keys(headers).map((header) => (
 					//サブヘッダが複数ある時はdrop-menuクラスを追加
