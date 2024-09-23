@@ -12,12 +12,7 @@ import Footer from "../components/footer.tsx";
   <head>
     <meta charset="utf-8" />
     <title>{frontmatter.title}</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
-      integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="/src/styles/katex.css" />
   </head>
   <body class="bg-[#ECF0F3]">
     <Header />
@@ -31,20 +26,27 @@ import Footer from "../components/footer.tsx";
     <div class="flex justify-center">
       <div class="w-[21%] pb-[2vw]">
         <div class="bg-[#ffffff] rounded-[0.2vw] pb-2" id="contributor">
-          <p class="text-[1vw] font-[600] text-[#4D4D4D] pt-[2vw] pl-[1.7vw] pb-[0.8vw] ml-0">
+          <p
+            class="text-[1vw] font-[600] text-[#4D4D4D] pt-[2vw] pl-[1.7vw] pb-[0.8vw] ml-0"
+          >
             Contributor
           </p>
           <Contributor contributors={frontmatter} />
         </div>
         <div class="bg-[#ffffff] rounded-[0.2vw] pb-[2.1vw]" id="index">
-          <p class="text-[1vw] font-[600] text-[#4D4D4D] pt-[2vw] pl-[1.7vw] pb-[0.6vw] ml-0">
+          <p
+            class="text-[1vw] font-[600] text-[#4D4D4D] pt-[2vw] pl-[1.7vw] pb-[0.6vw] ml-0"
+          >
             Index
           </p>
           <Index index={headings} />
         </div>
       </div>
       <div class="w-[56%] ml-[2%]">
-        <div class="my-[0] bg-[#ffffff] rounded-[0.2vw] pb-[3vw]" id="markdown-content">
+        <div
+          class="my-[0] bg-[#ffffff] rounded-[0.2vw] pb-[3vw]"
+          id="markdown-content"
+        >
           <slot />
         </div>
       </div>
