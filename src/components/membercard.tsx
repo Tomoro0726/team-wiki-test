@@ -1,23 +1,27 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface ContributorProps {
   contributor: string;
 }
 
 export default function MemberCard({ contributor }: ContributorProps) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+
+  const handleClick = () => {
+    setShowDetails(!showDetails);
+  };
+
   return (
-    <div>
+    <div onClick={handleClick} className="cursor-pointer">
       <img
         src={`/contributors/${contributor}.webp`}
         alt={contributor}
         className="w-[20vw] h-[20vw] rounded-[50%]"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       />
-      {isHovered && (
-        <div className="absolute top-[20vw] left-[20vw] w-[20vw] h-[20vw] bg-[#c6dff4] p-[1vw] rounded-[10%]">
-          {contributor}
+      {showDetails && (
+        <div className="mt-2 p-2 border rounded">
+          <p>Details about {contributor}</p>
+          {/* Add more details here */}
         </div>
       )}
     </div>
