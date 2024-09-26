@@ -3,28 +3,8 @@ const { frontmatter, headings } = Astro.props;
 import Header from "../components/header.tsx";
 import "../styles/global.css";
 import "../styles/markdown.scss";
-import Image from "astro/components/Image.astro";
 import Footer from "../components/footer.tsx";
 import MemberCard from "../components/membercard.tsx";
-
-//contributor0からcontributor16までの画像をimport
-import Contributor1 from "../assets/contributors/contributor0.webp";
-import Contributor2 from "../assets/contributors/contributor1.webp";
-import Contributor3 from "../assets/contributors/contributor2.webp";
-import Contributor4 from "../assets/contributors/contributor3.webp";
-import Contributor5 from "../assets/contributors/contributor4.webp";
-import Contributor6 from "../assets/contributors/contributor5.webp";
-import Contributor7 from "../assets/contributors/contributor6.webp";
-import Contributor8 from "../assets/contributors/contributor7.webp";
-import Contributor9 from "../assets/contributors/contributor8.webp";
-import Contributor10 from "../assets/contributors/contributor9.webp";
-import Contributor11 from "../assets/contributors/contributor10.webp";
-import Contributor12 from "../assets/contributors/contributor11.webp";
-import Contributor13 from "../assets/contributors/contributor12.webp";
-import Contributor14 from "../assets/contributors/contributor13.webp";
-import Contributor15 from "../assets/contributors/contributor14.webp";
-import Contributor16 from "../assets/contributors/contributor15.webp";
-import Contributor17 from "../assets/contributors/contributor16.webp";
 ---
 
 <html lang="ja">
@@ -43,13 +23,33 @@ import Contributor17 from "../assets/contributors/contributor16.webp";
         <h2 class="text-gray-600 text-[1.3vw] font-[600] text-center">WET</h2>
         <div class="flex justify-between">
           <MemberCard contributor="contributor1" client:load />
-          <MemberCard contributor="contributor1" client:load />
-          <MemberCard contributor="contributor1" client:load />
+          <MemberCard contributor="contributor2" client:load />
+          <MemberCard contributor="contributor3" client:load />
         </div>
         <div class="flex justify-between">
-          <MemberCard contributor="contributor1" client:load />
-          <MemberCard contributor="contributor1" client:load />
-          <MemberCard contributor="contributor1" client:load />
+          <MemberCard contributor="contributor3" client:load />
+          <MemberCard contributor="contributor4" client:load />
+          <MemberCard contributor="contributor5" client:load />
+        </div>
+        <div class="flex justify-between">
+          <MemberCard contributor="contributor6" client:load />
+          <MemberCard contributor="contributor7" client:load />
+          <MemberCard contributor="contributor8" client:load />
+        </div>
+        <div class="flex justify-between">
+          <MemberCard contributor="contributor9" client:load />
+          <MemberCard contributor="contributor10" client:load />
+          <MemberCard contributor="contributor11" client:load />
+        </div>
+        <div class="flex justify-between">
+          <MemberCard contributor="contributor12" client:load />
+          <MemberCard contributor="contributor13" client:load />
+          <MemberCard contributor="contributor14" client:load />
+        </div>
+        <div class="flex justify-between">
+          <MemberCard contributor="contributor15" client:load />
+          <MemberCard contributor="contributor16" client:load />
+          <MemberCard contributor="contributor17" client:load />
         </div>
       </div>
     </div>

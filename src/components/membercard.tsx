@@ -19,9 +19,8 @@ export default function MemberCard({ contributor }: ContributorProps) {
         className="w-[20vw] h-[20vw] rounded-[50%]"
       />
       {showDetails && (
-        <div className="mt-2 p-2 border rounded">
+        <div className="mt-2 p-2 border rounded w-[100vw] h-[100vh] top-0 left-0 absolute bg-black">
           <p>Details about {contributor}</p>
-          {/* Add more details here */}
         </div>
       )}
     </div>
