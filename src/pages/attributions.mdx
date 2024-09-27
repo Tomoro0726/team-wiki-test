@@ -6,6 +6,15 @@ Contributor: ["contributor0","contributor2"]
 import test from '../assets/test.JPG';
 import { Image } from 'astro:assets';
 
+## Table
+
+You can also include code blocks.
+
+| TH 左寄せ | TH 中央寄せ | TH 右寄せ |
+| :--- | :---: | ---: |
+| TD | TD | TD |
+| TD | TD | TD |
+
 # Test
 <Image src={test} alt="test" format="avif" width={1080} />
 
@@ -75,11 +84,4 @@ You can include inline code snippets.
 def hello_world():
   print("Hello, World!")
 ```
-
-You can also include code blocks.
-
-| TH | TH |
-| ---- | ---- |
-| TD | TD |
-| TD | TD |
 
