@@ -89,21 +89,16 @@ export default function MemberCard({ contributor }: ContributorProps) {
       explanation:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quosblanditiis tenetur unde suscipit, quam beatae rerum inventoreconsectetur, neque doloribus, cupiditate numquam dignissimos laborumLorem ipsum dolor sit amet, consectetur adipisicing elit. Quos 16.",
     },
-    contributor17: {
-      name: "Contributor 17",
-      explanation:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quosblanditiis tenetur unde suscipit, quam beatae rerum inventoreconsectetur, neque doloribus, cupiditate numquam dignissimos laborumLorem ipsum dolor sit amet, consectetur adipisicing elit. Quos 16.",
-    },
   };
   return (
-    <div className="cursor-pointer text-center mt-[4vh]">
+    <div className="cursor-pointer text-center ml-[5vh] mr-[5vh] mt-[4vh]">
       <img
         src={`/contributors/${contributor}.webp`}
         alt={contributor}
         loading="lazy"
-        className="w-[20vw] h-[20vw] rounded-[50%]  bg-[#e6e6e6]"
+        className="w-[15vw] h-[15vw] rounded-[50%]  bg-[#c6c6c6]"
       />
-      <h3 className="text-2xl font-light">
+      <h3 className="text-[1.5vw] font-light">
         {memberCardData[contributor].name}
       </h3>
     </div>

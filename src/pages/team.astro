@@ -37,40 +37,40 @@ import MemberCard from "../components/membercard.tsx";
     </div>
 
     <Header />
-    <div class="text-gray-600 h-[40vh] flex ml-[10.5%] items-center" id="title">
+    <div
+      class="text-gray-600 mt-[2vh] flex items-center justify-center"
+      id="title"
+    >
       <h1 class="text-[#4D4D4D] text-[4vw] font-[800] mt-[70px]">Members</h1>
     </div>
     <div class="m-[1vh] flex justify-center">
       <div class="w-[80%]">
-        <div class="flex justify-between">
+        <div class="flex justify-center">
+          <MemberCard contributor="contributor0" client:load />
+        </div>
+        <div class="flex justify-center">
           <MemberCard contributor="contributor0" client:load />
           <MemberCard contributor="contributor1" client:load />
+          <MemberCard contributor="contributor14" client:load />
           <MemberCard contributor="contributor2" client:load />
         </div>
-        <div class="flex justify-between">
+        <div class="flex justify-center">
           <MemberCard contributor="contributor3" client:load />
           <MemberCard contributor="contributor4" client:load />
+          <MemberCard contributor="contributor14" client:load />
           <MemberCard contributor="contributor5" client:load />
         </div>
-        <div class="flex justify-between">
+        <div class="flex justify-center">
           <MemberCard contributor="contributor6" client:load />
           <MemberCard contributor="contributor7" client:load />
+          <MemberCard contributor="contributor14" client:load />
           <MemberCard contributor="contributor8" client:load />
         </div>
-        <div class="flex justify-between">
+        <div class="flex justify-center">
           <MemberCard contributor="contributor9" client:load />
           <MemberCard contributor="contributor10" client:load />
-          <MemberCard contributor="contributor11" client:load />
-        </div>
-        <div class="flex justify-between">
-          <MemberCard contributor="contributor12" client:load />
-          <MemberCard contributor="contributor13" client:load />
           <MemberCard contributor="contributor14" client:load />
-        </div>
-        <div class="flex justify-between">
-          <MemberCard contributor="contributor15" client:load />
-          <MemberCard contributor="contributor16" client:load />
-          <MemberCard contributor="contributor17" client:load />
+          <MemberCard contributor="contributor11" client:load />
         </div>
       </div>
     </div>

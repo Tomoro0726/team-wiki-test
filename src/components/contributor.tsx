@@ -10,9 +10,7 @@ export default function Contributor(contributors: any) {
       {member.map((item: any) => (
         <img
           src={`/contributors/${item}.webp`}
-          className={
-            "w-[3vw] h-[3vw] rounded-[50%] mr-[0.7vw] border-[#c6dff4] border-solid border-[3.5px]"
-          }
+          className={"w-[3vw] h-[3vw] rounded-[50%] mr-[0.7vw] bg-[#e6e6e6]"}
         />
       ))}
     </div>
