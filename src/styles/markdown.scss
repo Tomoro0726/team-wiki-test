@@ -18,30 +18,28 @@ html {
     font-size: 1.5vw;
     margin-left: 3vw;
     margin-right: 3vw;
-    border-bottom: 3px solid #ece9e9;
+    border-bottom: 2px solid #ece9e9;
     margin-bottom: 3vh;
     line-height: 1.7vw;
+    margin-top: 8vh;
   }
 
   h3 {
     font-size: 1.3vw;
     margin-left: 3vw;
     margin-right: 3vw;
-    border-bottom: 3px solid #ece9e9;
+    border-bottom: 2px solid #ece9e9;
     margin-bottom: 3vh;
     line-height: 1.7vw;
-  }
-
-  h4 {
-    font-size: 1.2vw;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin-top: 8vh;
   }
 
   img {
     width: 90%;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
     &:hover {
       cursor: zoom-in;
     }
@@ -54,7 +52,6 @@ html {
     font-size: 1.1vw;
     font-weight: 300;
     line-height: 2vw;
-    margin-bottom: 8vh;
 
     code {
       background-color: #f4f4f4;
@@ -103,6 +100,8 @@ html {
     background-color: #f4f4f4;
     border-radius: 5px;
     padding-left: 1vw;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
 
     p {
       margin: 0;
@@ -141,6 +140,8 @@ html {
   }
   .github-dark {
     margin-top: 0;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
   }
   .katex-display {
     margin-left: 3vw;
@@ -182,5 +183,7 @@ html {
     aspect-ratio: 16 / 9;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
   }
 }
