@@ -84,6 +84,11 @@ memberCardData = {
     explanation:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quosblanditiis tenetur unde suscipit, quam beatae rerum inventoreconsectetur, neque doloribus, cupiditate numquam dignissimos laborumLorem ipsum dolor sit amet, consectetur adipisicing elit. Quos 16.",
   },
+  contributor17: {
+    name: "Contributor 17",
+    explanation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quosblanditiis tenetur unde suscipit, quam beatae rerum inventoreconsectetur, neque doloribus, cupiditate numquam dignissimos laborumLorem ipsum dolor sit amet, consectetur adipisicing elit. Quos 16.",
+  },
 };
 
 document.addEventListener("DOMContentLoaded", function () {
