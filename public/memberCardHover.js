@@ -24,8 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(imgSrc);
       //urlの最後の/以降の文字列を取得
       const imgName = imgSrc.split("/").pop();
-      //mask2のsrcを変更
-      document.getElementById("mask2").src = "./images/member/" + imgName;
+      //mask2の中のdivの中のimgのsrcを変更
+      document.getElementById("mask2").querySelector("img").src =
+        "/contributors/" + imgName;
+
       document.getElementById("mask1").style.display = "block";
       document.getElementById("mask2").style.display = "block";
       anime({
