@@ -5,45 +5,43 @@ html {
 #markdown-content {
   padding-top: 8vh;
   color: #4d4d4d;
+  word-wrap: break-word;
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-
   h1 {
     font-size: 2.4vw;
     text-align: center;
     font-weight: 800;
+    padding-bottom: 5vh;
   }
 
   h2 {
     font-size: 1.5vw;
-    padding-top: 3vh;
     margin-left: 3vw;
     margin-right: 3vw;
-    padding-bottom: 1vh;
     border-bottom: 3px solid #ece9e9;
+    margin-bottom: 3vh;
+    line-height: 1.7vw;
   }
 
   h3 {
     font-size: 1.3vw;
-    padding-top: 3vh;
     margin-left: 3vw;
     margin-right: 3vw;
-    padding-bottom: 1vh;
     border-bottom: 3px solid #ece9e9;
+    margin-bottom: 3vh;
+    line-height: 1.7vw;
   }
 
   h4 {
     font-size: 1.2vw;
-    padding-top: 3vh;
     margin-left: 3vw;
     margin-right: 3vw;
-    padding-bottom: 1vh;
   }
 
   img {
     width: 90%;
     margin-left: 3vw;
     margin-right: 3vw;
-    margin-top: 1vh;
     &:hover {
       cursor: zoom-in;
     }
@@ -56,7 +54,7 @@ html {
     font-size: 1.1vw;
     font-weight: 300;
     line-height: 2vw;
-    margin-top: 30px;
+    margin-bottom: 8vh;
 
     code {
       background-color: #f4f4f4;
@@ -141,13 +139,9 @@ html {
       font-weight: 300;
     }
   }
-
-  img {
-    margin-top: 1vh;
-    margin-left: auto;
-    margin-right: auto;
+  .github-dark {
+    margin-top: 0;
   }
-
   .katex-display {
     margin-left: 3vw;
     margin-right: 3vw;
@@ -188,6 +182,5 @@ html {
     aspect-ratio: 16 / 9;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1vh;
   }
 }
