@@ -95,10 +95,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const memberCard = document.querySelectorAll(".cursor-pointer");
   memberCard.forEach(function (card) {
     card.addEventListener("mouseover", function () {
-      console.log("mouseover");
+      anime({
+        targets: card,
+        opacity: 0.9,
+        duration: 1,
+      });
     });
     card.addEventListener("mouseout", function () {
-      console.log("mouseout");
+      anime({
+        targets: card,
+        opacity: 1,
+        duration: 1,
+      });
     });
   });
 });
