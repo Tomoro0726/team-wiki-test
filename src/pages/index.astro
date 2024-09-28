@@ -1,8 +1,7 @@
 ---
 import Footer from "../components/footer";
 import "../styles/global.css";
-import { Image } from "astro:assets";
-import test from "../assets/test.JPG";
+import "../styles/index.scss";
 import Header from "../components/header.tsx";
 ---
 
@@ -11,13 +10,50 @@ import Header from "../components/header.tsx";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Markdown Design example</title>
+    <title>VitaliNK</title>
+    <script src="/src/styles/gsap.min.js" is:inline></script>
+
+    <script src="/src/styles/ScrollTrigger.js" is:inline></script>
+
+    <script src="/src/styles/index.js" type="module" is:inline></script>
   </head>
-  <body class="m-0 p-0 bg-gray-200">
+  <body>
     <Header />
-    <div class="bg-black h-screen"></div>
-    <div class="p-8 text-center text-blue-400 underline h-screen">
-      <Image src={test} alt="test" format="avif" width={1080} />
+    <div class="top">
+      <img class="text" src="/vitalnk.png" alt="" />
+      <img class="top-image-1" src="/natto.png" alt="" />
+    </div>
+    <div class="content1">
+      <p>
+        <span>Bats</span> play a large role in our culture and environment. They
+        increase the biodiversity of local ecosystems and confer other economic benefits,
+        such as saving the US billions of dollars on pest control annually.
+      </p>
+      <p>
+        <span>
+          But bat populations across the country have been facing a serious
+          crisis….
+        </span>
+      </p>
+    </div>
+    <div class="content2">
+      <h1>The Problem</h1>
+      <div class="content2-1">
+        <div>
+          <p>
+            Thrombosis occurs when blood clots form in arteries and veins,
+            clogging the flow. They can lead to other major problems, being
+            responsible for 1 in 3 deaths in Japan, a serious concern in this
+            aging society.
+          </p>
+          <p>
+            Early-stage treatment drugs have heavy side effects, making healthy
+            diets/exercises from a daily basis crucially important for
+            prevention.
+          </p>
+        </div>
+        <img src="/contributors/contributor1.webp" alt="" />
+      </div>
     </div>
     <Footer />
   </body>

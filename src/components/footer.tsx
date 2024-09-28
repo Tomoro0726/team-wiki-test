@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <div>
-      <div className="flex justify-center items-center h-[20vh] mt-[8vh]">
+      <div className="flex justify-center items-center h-[20vh] mt-[8vh] bg-[#ECF0F3]">
         <div className="flex">
           <img
             src="/footer-logo.png"
