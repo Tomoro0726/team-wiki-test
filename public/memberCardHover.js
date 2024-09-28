@@ -19,6 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const memberCard = document.querySelectorAll(".cursor-pointer");
   memberCard.forEach(function (card) {
     card.addEventListener("click", function () {
+      //clickしたカードの中のimgのsrcを取得
+      const imgSrc = card.querySelector("img").src;
+      console.log(imgSrc);
+      //urlの最後の/以降の文字列を取得
+      const imgName = imgSrc.split("/").pop();
+      //mask2のsrcを変更
+      document.getElementById("mask2").src = "./images/member/" + imgName;
       document.getElementById("mask1").style.display = "block";
       document.getElementById("mask2").style.display = "block";
       anime({
