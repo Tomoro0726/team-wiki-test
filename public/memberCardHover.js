@@ -1,8 +1,3 @@
-document.getElementById("mask1").style.display = "none";
-document.getElementById("mask1").style.opacity = 0.0;
-document.getElementById("mask2").style.display = "none";
-document.getElementById("mask2").style.opacity = 0.0;
-
 memberCardData = {
   contributor0: {
     name: "Tomoro Saiot",
