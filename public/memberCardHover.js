@@ -1,5 +1,7 @@
-//document.getElementById("mask").style.display = "none";
-//document.getElementById("mask").style.opacity = 0.0;
+document.getElementById("mask1").style.display = "none";
+document.getElementById("mask1").style.opacity = 0.0;
+document.getElementById("mask2").style.display = "none";
+document.getElementById("mask2").style.opacity = 0.0;
 
 document.addEventListener("DOMContentLoaded", function () {
   const memberCard = document.querySelectorAll(".cursor-pointer");
@@ -13,19 +15,42 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//click
 document.addEventListener("DOMContentLoaded", function () {
   const memberCard = document.querySelectorAll(".cursor-pointer");
   memberCard.forEach(function (card) {
     card.addEventListener("click", function () {
-      console.log("click");
-      document.getElementById("mask").style.display = "block";
+      document.getElementById("mask1").style.display = "block";
+      document.getElementById("mask2").style.display = "block";
       anime({
-        targets: "#mask",
-        opacity: 0.5,
+        targets: "#mask1",
+        opacity: 0.9,
+        duration: 300,
+        easing: "linear",
+      });
+      anime({
+        targets: "#mask2",
+        opacity: 1,
         duration: 300,
         easing: "linear",
       });
     });
   });
+});
+
+//mask1 or mask2 click event
+document.getElementById("mask2").addEventListener("click", function () {
+  anime({
+    targets: "#mask1",
+    opacity: 0,
+    duration: 300,
+    easing: "linear",
+  });
+  anime({
+    targets: "#mask2",
+    opacity: 0,
+    duration: 300,
+    easing: "linear",
+  });
+  document.getElementById("mask1").style.display = "none";
+  document.getElementById("mask2").style.display = "none";
 });
