@@ -28,12 +28,7 @@ import MemberCard from "../components/membercard.tsx";
         />
         <div class="z-[1001] ml-[7vw]">
           <h1 class="text-customGray text-3xl">Tomoro Saito</h1>
-          <p class="w-[70%] mt-[2.8vh] leading-7">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-            blanditiis tenetur unde suscipit, quam beatae rerum inventore
-            consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-          </p>
+          <p class="w-[70%] mt-[2.8vh] leading-7"></p>
         </div>
       </div>
     </div>
@@ -46,9 +41,9 @@ import MemberCard from "../components/membercard.tsx";
       <div class="w-[80%]">
         <h2 class="text-gray-600 text-[1.3vw] font-[600] text-center">WET</h2>
         <div class="flex justify-between">
+          <MemberCard contributor="contributor0" client:load />
           <MemberCard contributor="contributor1" client:load />
           <MemberCard contributor="contributor2" client:load />
-          <MemberCard contributor="contributor3" client:load />
         </div>
         <div class="flex justify-between">
           <MemberCard contributor="contributor3" client:load />
