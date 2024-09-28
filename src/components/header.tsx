@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <nav
       id="menu"
-      className="nav-menu flex justify-between items-center bg-[#ECF0f3] p-4 z-50 font-semibold"
+      className="nav-menu flex justify-between items-center bg-[#ECF0f3] p-4 font-semibold"
     >
       <a
         className="flex items-center w-1/4 pt-[0.5vw] pl-[2vw] pb-[0.5vw]"

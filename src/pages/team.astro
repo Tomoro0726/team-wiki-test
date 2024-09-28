@@ -10,11 +10,33 @@ import MemberCard from "../components/membercard.tsx";
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
+    <script src="/src/styles/anime.min.js" is:inline></script>
     <title>Members</title>
   </head>
   <body class="bg-[#ECF0F3]">
-    <Header />
+    <div
+      id="mask"
+      class="h-[100%] w-[100%] bg-[#FFFFFF] fixed top-0 left-0 z-[1000]"
+    >
+      <div class="flex justify-center items-center w-[100%] h-[100%]">
+        <img
+          src="/public/contributors/contributor1.webp"
+          alt=""
+          class="ml-[20vw] w-[50vw]"
+        />
+        <div class="z-[1001] ml-[7vw]">
+          <h1 class="text-customGray text-3xl">Tomoro Saito</h1>
+          <p class="w-[70%] mt-[2.8vh] leading-7">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+            blanditiis tenetur unde suscipit, quam beatae rerum inventore
+            consectetur, neque doloribus, cupiditate numquam dignissimos laborum
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+          </p>
+        </div>
+      </div>
+    </div>
 
+    <Header />
     <div class="text-gray-600 h-[40vh] flex ml-[10.5%] items-center" id="title">
       <h1 class="text-[#4D4D4D] text-[4vw] font-[800] mt-[70px]">Members</h1>
     </div>
@@ -55,8 +77,6 @@ import MemberCard from "../components/membercard.tsx";
     </div>
 
     <Footer />
-    <script is:inline src="/markdown/image.js"></script>
-    <script is:inline src="/markdown/index_move.js"></script>
-    <script is:inline src="/markdown/index_highlight.js"></script>
+    <script is:inline src="/memberCardHover.js"></script>
   </body>
 </html>
