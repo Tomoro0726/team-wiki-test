@@ -17,24 +17,28 @@ export default function Footer() {
                   <img
                     src="/icon-fontawesome/x-twitter.svg"
                     className="w-[1.6vw] h-[1.6vw] mr-[0.8vw]"
+                    loading="lazy"
                   />
                 </a>
                 <a href="https://www.instagram.com/igemgrandtokyo/">
                   <img
                     src="/icon-fontawesome/instagram.svg"
                     className="w-[1.6vw] h-[1.6vw] mr-[0.8vw]"
+                    loading="lazy"
                   />
                 </a>
                 <a href="https://note.com/igem_grand_tokyo/">
                   <img
                     src="/icon-fontawesome/file-regular.svg"
                     className="w-[1.6vw] h-[1.6vw] mr-[0.8vw]"
+                    loading="lazy"
                   />
                 </a>
                 <a href="https://www.facebook.com/igemgrandtokyo">
                   <img
                     src="/icon-fontawesome/facebook-f.svg"
                     className="w-[1.6vw] h-[1.6vw] mr-[0.8vw]"
+                    loading="lazy"
                   />
                 </a>
               </div>

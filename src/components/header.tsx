@@ -30,7 +30,7 @@ export default function Header() {
         className="flex items-center w-1/4 pt-[0.5vw] pl-[2vw] pb-[0.5vw]"
         href="/"
       >
-        <img src="/logo.webp" className="h-[3vw]" />
+        <img src="/logo.webp" loading="lazy" className="h-[3vw]" />
       </a>
       <ul className="menu-list">
         <div className="menu-item">
