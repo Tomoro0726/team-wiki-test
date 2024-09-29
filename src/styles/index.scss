@@ -17,7 +17,9 @@ body {
     align-items: center;
     .top-image-1 {
       width: 38vw;
-      padding-top: 30vh;
+      position: absolute;
+      top: 30vh;
+      right: 0;
     }
     .text {
       margin-left: 16vw;
