@@ -57,7 +57,7 @@ body {
     }
 
     p {
-      margin: 10vh 0 2vh;
+      margin: 5vh 0 2vh;
       text-align: center;
       font-size: 2vw;
       color: #7a7c7d;
@@ -73,21 +73,25 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-flow: column-reverse;
       width: 80%;
       margin-left: auto;
       margin-right: auto;
 
       .text {
-        width: 80%;
+        width: 70vw;
 
         p {
-          text-align: left;
+          text-align: center;
           word-wrap: break-word;
         }
       }
 
       img {
-        width: 30vw;
+        width: 36vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5vh;
       }
     }
   }

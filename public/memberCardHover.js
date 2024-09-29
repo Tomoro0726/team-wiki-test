@@ -91,6 +91,40 @@ memberCardData = {
   },
 };
 
+//URLの#以降の文字列を取得
+const urlHash = location.hash;
+//URLの#以降の文字列を取得
+const urlHashWithoutSharp = urlHash.split("#").pop();
+//URLの#以降の文字列がmemberCardDataのkeyに存在するか確認
+if (urlHashWithoutSharp in memberCardData) {
+  //存在する場合はmask1とmask2を表示
+  document.getElementById("mask1").style.display = "block";
+  document.getElementById("mask2").style.display = "block";
+  //mask2の中のdivの中のimgのsrcを変更
+  document.getElementById("mask2").querySelector("img").src =
+    "/contributors/" + urlHashWithoutSharp + ".webp";
+  //テキスト要素の変更
+  document.getElementById("mask2").querySelector("h1").textContent =
+    memberCardData[urlHashWithoutSharp].name;
+  document.getElementById("mask2").querySelector("p").textContent =
+    memberCardData[urlHashWithoutSharp].explanation;
+  //mask1とmask2のopacityを変更
+  document.getElementById("mask1").style.display = "block";
+  document.getElementById("mask2").style.display = "block";
+  anime({
+    targets: "#mask1",
+    opacity: 0.9,
+    duration: 300,
+    easing: "linear",
+  });
+  anime({
+    targets: "#mask2",
+    opacity: 1,
+    duration: 300,
+    easing: "linear",
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const memberCard = document.querySelectorAll(".cursor-pointer");
   memberCard.forEach(function (card) {
@@ -164,4 +198,6 @@ document.getElementById("mask2").addEventListener("click", function () {
   });
   document.getElementById("mask1").style.display = "none";
   document.getElementById("mask2").style.display = "none";
+  //URLの#を削除
+  history.pushState("", "", location.href.split("#")[0]);
 });
