@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <nav
       id="menu"
-      className="nav-menu flex justify-between items-center bg-[#ECF0f3] p-4 font-semibold"
+      className="nav-menu flex justify-between items-center bg-[#ECF0f3] p-4 pr-[0] font-semibold"
     >
       <a
         className="flex items-center w-1/4 pt-[0.5vw] pl-[2vw] pb-[0.5vw]"
@@ -47,7 +47,12 @@ export default function Header() {
             {headers[header].length > 1 ? ( // 親ヘッダにサブヘッダが複数ある時
               <>
                 <a href={`/${header.toLowerCase()}`} className="font-extrabold">
-                  {header.toUpperCase()} &or;
+                  {header.toUpperCase()}
+                  <img
+                    className="h-[1vh] ml-[5px] mt-[2px]"
+                    src="/nav.svg"
+                    alt=""
+                  />
                 </a>
                 {/* URLはLowerで、headerはUpperで */}
                 <div className="drop-menu-list">
@@ -55,7 +60,7 @@ export default function Header() {
                     <div className="drop-menu-item">
                       <a
                         href={`/${subHeader.toLowerCase()}`}
-                        className="font-semibold"
+                        className="font-semibold  text-customGray"
                       >
                         {subHeader.charAt(0).toUpperCase() +
                           subHeader.slice(1).toLowerCase()}
