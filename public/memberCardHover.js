@@ -1,23 +1,22 @@
 memberCardData = {
   contributor0: {
-    name: "Tomoro Saiot",
-    explanation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quosblanditiis tenetur unde suscipit, quam beatae rerum inventoreconsectetur, neque doloribus, cupiditate numquam dignissimos laborumLorem ipsum dolor sit amet, consectetur adipisicing elit. Quos",
+    name: "Shiori Kajikawa",
+    explanation: `I'm Shiori, an aspiring scientist continuously fascinated by the wonders of biotechnology. My experience of leading this team has transformed by life; I am truly thankful for the support all has given me. I am really, really glad I did iGEM, and I hope you enjoy our wiki! 
+`,
   },
   contributor1: {
-    name: "Tomoro Saiot",
+    name: "Kei Hato",
     explanation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quosblanditiis tenetur unde suscipit, quam beatae rerum inventoreconsectetur, neque doloribus, cupiditate numquam dignissimos laborumLorem ipsum dolor sit amet, consectetur adipisicing elit. Quos",
+      "I am very honored to have the support of so many people and to be able to work with a wide variety of colleagues. I want to rush all the way to the grand jamboree!",
   },
   contributor2: {
-    name: "Contributor 2",
-    explanation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quosblanditiis tenetur unde suscipit, quam beatae rerum inventoreconsectetur, neque doloribus, cupiditate numquam dignissimos laborumLorem ipsum dolor sit amet, consectetur adipisicing elit. Quos 2.",
+    name: "Arisa Tani",
+    explanation: `I truly enjoy working with these awesome and unique members. In the future, I hope to excel at research and become an entrepreneur; I want to step closer to that dream through iGEM!`,
   },
   contributor3: {
-    name: "Contributor 3",
-    explanation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quosblanditiis tenetur unde suscipit, quam beatae rerum inventoreconsectetur, neque doloribus, cupiditate numquam dignissimos laborumLorem ipsum dolor sit amet, consectetur adipisicing elit. Quos 3.",
+    name: "Saki Tsuchiya",
+    explanation: `This is Saki Tsuchiya, who will take the part in wet lab and education activities.
+“I will work hard to win the prize in Education!!”`,
   },
   contributor4: {
     name: "Contributor 4",
