@@ -11,17 +11,14 @@ import Header from "../components/header.tsx";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VitaliNK</title>
-    <script src="/src/styles/gsap.min.js" is:inline></script>
-
-    <script src="/src/styles/ScrollTrigger.js" is:inline></script>
 
     <script src="/src/styles/index.js" type="module" is:inline></script>
   </head>
   <body>
     <Header />
     <div class="top">
-      <img class="text" src="/vitalnk.png" alt="" />
-      <img class="top-image-1" src="/natto.png" alt="" />
+      <img class="text" src="/vitalnk.png" alt="" loading="lazy" />
+      <img class="top-image-1" src="/natto.png" loading="lazy" alt="" />
     </div>
     <div class="content1">
       <p>
@@ -44,7 +41,7 @@ import Header from "../components/header.tsx";
             responsible for 1 in 3 deaths in Japan, a serious concern in this
             aging society.
           </p>
-          <img src="/top-img-1.gif" alt="" />
+          <img src="/top-img-1.gif" loading="lazy" alt="" />
           <p>
             Early-stage treatment drugs have heavy side effects, making healthy
             diets/exercises from a daily basis crucially important for
