@@ -17,11 +17,15 @@ body {
 .menu-item {
   position: relative;
   padding: 1vh;
-  padding-left: 0.5vw;
-  padding-right: 3vw;
+  padding-left: 1vw;
+  padding-right: 2vw;
   &:hover {
     background-color: #e2e2e2;
   }
+}
+.add-padding {
+  padding-left: 1vw;
+  padding-right: 2.8vw;
 }
 
 /* メニューアイテムのホバースタイル */
@@ -61,6 +65,9 @@ body {
   a {
     font-weight: 400;
     font-size: 1vw;
-    margin-left: 0.5vw;
+    margin-left: 1vw;
+  }
+  .add-padding-a {
+    margin-left: 1vw;
   }
 }
