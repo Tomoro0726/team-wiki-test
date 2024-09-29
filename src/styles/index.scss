@@ -91,7 +91,8 @@ body {
         width: 36vw;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 5vh;
+        margin-top: 15vh;
+        margin-bottom: 12vh;
       }
     }
   }
@@ -99,6 +100,12 @@ body {
     margin: 20vh auto;
     width: 100%;
     text-align: center;
+    .text-3 {
+      width: 64%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     h1 {
       font-size: 4vw;
@@ -137,6 +144,8 @@ body {
     .top-img-2 {
       margin-top: 10vh;
       width: 45vw;
+      margin-top: 20vh;
+      margin-bottom: 8vh;
     }
     .yoko-2 {
       display: flex;
@@ -182,6 +191,7 @@ body {
       margin-left: auto;
       margin-right: auto;
       width: 64%;
+      margin-top: 40vh;
     }
     .top-img-4 {
       width: 100vw;
