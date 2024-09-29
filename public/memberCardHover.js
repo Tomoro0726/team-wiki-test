@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
     card.addEventListener("mouseover", function () {
       anime({
         targets: card,
-        opacity: 0.9,
+        opacity: 0.7,
         duration: 1,
       });
     });
