@@ -12,9 +12,14 @@ window.addEventListener("scroll", () => {
 
   //アニメーションしながら消える
   if (scrollPosition > threshold) {
-    topImage.style.top = topImageTop + scrollPosition * +1.5 + "px";
+    const newTop = topImageTop + scrollPosition * 0.01;
+    const maxTop = viewportHeight + topImage.offsetHeight;
+    topImage.style.top = Math.min(newTop, maxTop) + "px";
     //徐々に透明にする
-    topImage.style.opacity = 1 - (scrollPosition - threshold) / threshold;
+    topImage.style.opacity = Math.max(
+      1 - (scrollPosition - threshold) / (4.5 * threshold),
+      0
+    );
   } else {
     //top:30vhに戻す
     topImage.style.top = "30vh";
