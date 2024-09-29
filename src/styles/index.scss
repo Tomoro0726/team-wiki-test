@@ -15,14 +15,14 @@ body {
     justify-content: space-between;
     align-items: center;
 
+    .top-image-1 {
+      width: 38vw;
+      padding-top: 40vh;
+    }
     .text {
       margin-left: 16vw;
       width: 23vw;
-    }
-
-    img {
-      width: 55vw;
-      margin-bottom: 2vh;
+      margin-top: 0;
     }
   }
 
