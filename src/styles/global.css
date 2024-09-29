@@ -17,8 +17,8 @@ body {
 .menu-item {
   position: relative;
   padding: 1vh;
-  padding-left: 1vw;
-  padding-right: 2vw;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
   &:hover {
     background-color: #e2e2e2;
   }
@@ -65,7 +65,7 @@ body {
   a {
     font-weight: 400;
     font-size: 1vw;
-    margin-left: 1vw;
+    margin-left: 1.5vw;
   }
   .add-padding-a {
     margin-left: 1vw;
