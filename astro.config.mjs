@@ -10,36 +10,31 @@ import playformInline from "@playform/inline";
 
 // https://astro.build/config
 export default defineConfig({
-	output: "static",
-	compressHTML: true,
-	integrations: [
-		react(),
-		tailwind(),
-		mdx({
-			remarkPlugins: [remarkBreaks],
+  output: "static",
+  compressHTML: true,
+  integrations: [
+    react(),
+    tailwind(),
+    mdx({
+      remarkPlugins: [remarkBreaks],
 
-			remarkPlugins: [remarkMath],
-			// relevant
-			rehypePlugins: [rehypeKatex], // relevant
-		}),
+      remarkPlugins: [remarkMath],
+      // relevant
+      rehypePlugins: [rehypeKatex], // relevant
+    }),
 
-		(await import("@playform/compress")).default({
-			CSS: true,
-			HTML: {
-				"html-minifier-terser": {
-					removeAttributeQuotes: false,
-				},
-			},
-			Image: true,
-			JavaScript: true,
-			SVG: false,
-		}),
-		playformInline(),
-	],
-	markdown: {
-		remarkPlugins: [remarkBreaks],
-	},
-	image: {
-		remotePatterns: [{ protocol: "https" }],
-	},
+    (await import("@playform/compress")).default({
+      CSS: true,
+      HTML: false,
+      Image: true,
+      JavaScript: true,
+      SVG: false,
+    }),
+  ],
+  markdown: {
+    remarkPlugins: [remarkBreaks],
+  },
+  image: {
+    remotePatterns: [{ protocol: "https" }],
+  },
 });
