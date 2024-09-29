@@ -97,7 +97,7 @@ body {
   }
   .content3 {
     margin: 20vh auto;
-    width: 80%;
+    width: 100%;
     text-align: center;
 
     h1 {
@@ -181,7 +181,10 @@ body {
     .last-p {
       margin-left: auto;
       margin-right: auto;
-      width: 80%;
+      width: 64%;
+    }
+    .top-img-4 {
+      width: 100vw;
     }
   }
 }
