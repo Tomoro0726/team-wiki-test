@@ -21,19 +21,7 @@ export default defineConfig({
       remarkPlugins: [remarkMath],
       // relevant
       rehypePlugins: [rehypeKatex], // relevant
-    }),
-
-    (await import("@playform/compress")).default({
-      CSS: true,
-      HTML: false,
-      Image: {
-        enabled: true,
-        quality: 80,
-        avif: true,
-      },
-      JavaScript: true,
-      SVG: false,
-    }),
+    })
   ],
   markdown: {
     remarkPlugins: [remarkBreaks],
@@ -43,5 +31,7 @@ export default defineConfig({
   },
   build: {
     format: "file",
+    assets:"_custom",
+    assetsPrefix:"https://github.com/"
   },
 });
