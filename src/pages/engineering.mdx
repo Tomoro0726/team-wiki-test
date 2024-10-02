@@ -41,7 +41,7 @@ The goal of the project is achieved by inserting *aprE*, the nattokinase encodin
 Thus, our objective plasmid will initially be transformed into *E. coli* DH5α for proliferation, extracted/transferred into *E. coli* C600 (which has the wild-type *recA* gene for plasmid multimerization), then into highly genetically amenable *B. subtilis* 168, eventually transferred to *B. subtilis natto* BEST195 for nattokinase production. 
 
 <Image src={image11} alt="test" format="avif" width={1080} />
-(Fig. 1\. Plasmid delivery method)
+<p style="text-align: center;"><em>(Fig. 1\. Plasmid delivery method)</em></p>
 
 **Plasmid: Comparing between native, inducible, and constitutive promoters.**  
 In order to differentiate how different promoters result in various amounts of NK production within the bacteria, we designed three types of plasmids.   
@@ -49,13 +49,15 @@ To prevent leakage/flow-in transcriptions, we've designed to place a T*λM3* ter
 
 The first, "pNK1", includes P*aprE*, the native promoter of *aprE* in *B. subtilis*. This was designed to simply increase the copy number of the *aprE* gene in a cell and check whether our plasmid will function properly within the experiment.  
 <Image src={image7} alt="test" format="avif" width={1080} />
-Fig 2\. pNK1 plasmid design
+<p style="text-align: center;"><em>Fig 2\. pNK1 plasmid design</em></p>
 
 The second, "pNK2", includes P*grac01*,\[5\] an IPTG-inducible promoter harboring *lac* operators. This was to prevent leaky expressions that might hamper cloning, and keep NK yield under control.   
 <Image src={image2} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig. 3. pNK2 promoter design)</em></p>
 
 Finally, "pNK3" includes P*grac212*,\[5\] a strong constitutive promoter that can yield increased production of recombinant proteins. This was aimed for extremely high levels of NK yield.  
 <Image src={image1} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig. 4. pNK3 promoter design)</em></p>
 
 P*grac01* is an IPTG-inducible promoter and P*grac212* is an inducer-free strong constitutive promoter, both are used for overproduction of recombinant proteins. In the referenced study, P*grac01* could repress gene expression about 24-fold in *E. coli* compared to low background levels, and P*grac212* resulted in gene expression up by 53.4%\[5\]. Sequence of their promoter region (-35 to \+1) and the UP element are identical, but they are differentiated by the mRNA controllable stabilizing element (CoSE) attached to the 5’ end of the transcript, which enhances stability of half-lives of mRNA transcripts and allow high production levels of recombinant proteins. \[6\]
 
@@ -68,7 +70,7 @@ To successfully carry out this project, we carefully planned a tactic to efficie
 **Primers: Including Terminators and Promoters**  
 The sequences of the parts used in this study are listed below.  
 <Image src={image6} alt="test" format="avif" width={1080} />
-Fig 5\. Sequences of T*λM3*, P*aprE*, P*grac01* and *grac212*
+<p style="text-align: center;"><em>(Fig 5\. Sequences of T*λM3*, P*aprE*, P*grac01* and *grac212*)</em></p>
 
 To obtain DNA fragment of *aprE* gene containing the terminator-promoter upstream and the terminator downstream the *aprE*, we decided to build primers with sequences of DNA parts (terminators, promoters). The *aprE* gene was amplified with the chromosomal DNA of BEST195. The vector DNA was also amplified by PCR, and then ligated by “In-Fusion” cloning. Instead of ordering custom DNAs, since this project is based on self-cloning, this method can allow us to initiate our wet lab more smoothly from a time perspective.
 
@@ -82,12 +84,12 @@ By in-fusion cloning of the duplicated vector plasmid framework with DNA fragmen
 
 <Image src={Engineering_fig6} alt="test" format="avif" width={1080} />
 
-(Fig. 6\. Process of constructing plasmids)
+<p style="text-align: center;"><em>(Fig. 6\. Process of constructing plasmids)</em></p>
 
 Thus, we built a promoter with functions listed below.
 
 <Image src={image16} alt="test" format="avif" width={1080} />
-Fig 7\. Primers in build 1
+<p style="text-align: center;"><em>(Fig 7\. Primers in build 1)</em></p>
 
 **Material Collection and Build**  
 Throughout our experiment, Prof. Kei Asai, an expert in *B. subtilis natto*, helped us with the technical aspects of engineering this unique chassis. He generously presented us with the plasmids and bacteria strains that are crucial for this study, as listed below.
@@ -108,16 +110,18 @@ However, we realized that primers for pNK2-F and pNK3-F were mistakenly missing 
 
 <Image src={image10} alt="test" format="avif" width={1080} />
 
-Fig 8\. Rebuilt primers for pNK2 and pNK3, which are from now on pNK4 and pNK5. 
+<p style="text-align: center;"><em>(Fig 8\. Rebuilt primers for pNK2 and pNK3, which are from now on pNK4 and pNK5. )</em></p>
 
 <Image src={image8} alt="test" format="avif" width={1080} />
-Fig 9\. Snapgene diagrams of pCJspc72, pNK1, pNK4, and pNK5. RFP in the original plasmid (pCJspc72) is replaced by *aprE*.
+
+<p style="text-align: center;"><em>(Fig 9\. Snapgene diagrams of pCJspc72, pNK1, pNK4, and pNK5. RFP in the original plasmid (pCJspc72) is replaced by *aprE*.)</em></p>
 
 After In-Fusion, pNK4 and pNK5 were transformed into *E.coli* DH5α. In the initial plan, *lacI* gene had to be cloned into pNK4, that is because *B. subtilis natto* has no genes encoding *lacI* repressor. However, due to lack of time, it was getting difficult to clone *lacI* gene into pNK4. We decided to allocate our laboratory experiment time prioritizing to create a strain with pNK1 and pNK5, and leave pNK4 to come back to later on.
 
 After transformation of pNK1 and pNK5 into *B. subtilis* 168, conjugational transfer to *B. subtilis natto* BEST195 was conducted.  
 <Image src={Engineering_fig10} alt="test" format="avif" width={1080} />
-(Fig. 10\. Conjugational transfer of plasmids)
+
+<p style="text-align: center;"><em>(Fig. 10\. Conjugational transfer of plasmids)</em></p>
 
 ## Test: Drop-in culture method and natto bean method for fibrin assay
 
@@ -126,19 +130,19 @@ To test nattokinase yield, we adopted the fibrin plate assay. When NK producing 
 First, we used filter membrane disks, dipped them in the cultures and placed them onto fibrin plates.   
 We also made natto beans with soybeans and the cell cultures, and placed them directly onto fibrin plates.   
 <Image src={image4} alt="test" format="avif" width={1080} />
-*(Fig. 11\. Natto produced using soybeans and B.subtilis natto BEST195)*
+<p style="text-align: center;"><em>(Fig. 11\. Natto produced using soybeans and B.subtilis natto BEST195)</em></p>
 
 Our goal was to measure the distances between the edge of the colony formed around the bean and the edge of the halo created, and estimate the relative NK production of each strain when cultured with soybean protein.
 
 ## Learn: Filter Membranes and Accuracy
 
 <Image src={image13} alt="test" format="avif" width={1080} />
-*(Fig. 12\. Fibrin plates with filter membrane disks after 24 hours)*
+<p style="text-align: center;"><em>(Fig. 12\. Fibrin plates with filter membrane disks after 24 hours)</em></p>
 
 We found that the filter membranes failed to produce highly visible halos, and decided that it would be difficult to measure the effectiveness of our plasmids with this method.
 
 <Image src={image14} alt="test" format="avif" width={1080} />
-*(Fig. 13\. Fibrin plate with natto bean after 24-hour culture)*
+<p style="text-align: center;"><em>(Fig. 13\. Fibrin plate with natto bean after 24-hour culture)</em></p>
 
 We also found that placing a natto bean directly onto the fibrin plate was insufficient in terms of accuracy. Some liquid on the surface from the medium mixed with the culture, and spread in different directions on the plate, and thus we concluded that this method was too error-prone.
 
@@ -153,13 +157,13 @@ We also used the natto produced with the different strains to test NK production
 The NB and LB cultures produced results that were both precise and accurate to the expected relative values. 
 
 <Image src={image9} alt="test" format="avif" width={1080} />
-*(Fig. 14\. Fibrin plates with NB culture of S903 strains after 24-hour culture)*
+<p style="text-align: center;"><em>(Fig. 14\. Fibrin plates with NB culture of S903 strains after 24-hour culture)</em></p>
 
 However, the natto suspension liquid samples failed to show consistent results.   
 During the experiment, we also noted that some samples showed abnormally high OD relative to others. We realized that some liquid from the beans themselves and flaky sheets of bacteria and bean skin formed around the natto beans may have been interfering with the OD values, disrupting the accuracy of the measurements. 
 
 <Image src={image5} alt="test" format="avif" width={1080} />
-(Fig. 14\. Fibrin plates with natto suspension liquid after 24-hour culture)
+<p style="text-align: center;"><em>(Fig. 15\. Fibrin plates with natto suspension liquid after 24-hour culture)</em></p>
 
 In conclusion, we decided that the fibrin plate assay using liquid culture was the optimal method to determine NK production.
 
