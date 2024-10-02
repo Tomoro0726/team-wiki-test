@@ -3,21 +3,17 @@ export default function Header() {
 		TEAM: ["Team", "Attributions"],
 		PROJECT: ["Contribution", "Description"],
 		WET: [
-			"Plant",
 			"Safety",
 			"Experiments",
 			"Notebook",
 			"Results",
 			"Engineering",
 		],
-		DRY: ["Hardware", "Measurement", "Model", "Software"],
+		DRY: ["Model", "Software"],
 		SAFETY: ["SAFETY"],
 		"HUMAN-PRACTICES": [
 			"Human-practices",
 			"Education",
-			"Entrepreneurship",
-			"Inclusivity",
-			"Sustainable",
 		],
 	};
 
