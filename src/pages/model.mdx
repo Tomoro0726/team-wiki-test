@@ -4,13 +4,13 @@ title: 'Model'
 Contributor: ["contributor11","contributor2"]
 ---
 import { Image } from 'astro:assets';
-import image1 from '../assets/Education/image/image1.png';
-import image2 from '../assets/Education/image/image2.png';
-import image3 from '../assets/Education/image/image3.png';
-import image4 from '../assets/Education/image/image4.png';
-import image5 from '../assets/Education/image/image5.png';
-import image6 from '../assets/Education/image/image6.png';
-import image7 from '../assets/Education/image/image7.png';
+import image1 from '../assets/Model/image/image1.png';
+import image2 from '../assets/Model/image/image2.png';
+import image3 from '../assets/Model/image/image3.png';
+import image4 from '../assets/Model/image/image4.png';
+import image5 from '../assets/Model/image/image5.png';
+import image6 from '../assets/Model/image/image6.png';
+import image7 from '../assets/Model/image/image7.png';
 
 
 # Model
@@ -44,11 +44,11 @@ First, we derived a partial differential equation for the relationship between N
 ## Derivation of equations
 
 **Definition 1．**  
-\begin{gather}  
+$$
 \mathcal{E} = \mathcal{E}(x, y, t) \\  
 u = u(x, y, t) \\  
 v = v(x, y, t)  
-\end{gather}  
+$$
 where $\mathcal{E}$ is the concentration of NK at a spatial point in the petri dish, $u$ is the concentration of the fibrin-NK action site before degradation, and $v$ is the concentration of the fibrin-NK action site after degradation. The degradation is assumed to be an irreversible reaction.
 
 **Assumption 1．**  
@@ -56,7 +56,7 @@ $u(x, y, 0) = \text{const.}$ that is, we assume that the time-initial value spac
 
 **Assumption 2.**  
 The action sites of NK on fibrin are as shown in the figure [Fig. 1], ...-[node]-[action site]-[node]-[action site]-[action site]-[node]-[action site]-.... [3]; i.e., assuming that the action site exists as a “point” on the fibrin fiber, it is possible to reduce the discussion to a reaction kinetics discussion by focusing only on the action site. In other words, the law of mass action can be used.  
-![][image1]  
+<Image src={image1} alt="test" format="avif" width={1080} />
 Figure 1: Shows the action site of fibrin and NK, which are thought to be in a chain structure.
 
 **Assumption 3．**  
@@ -68,35 +68,35 @@ Fibrin shall retain its performance as a porous medium because of its fibrous fo
 First, let's look at the diffusion term. Diffusion usually has the property of infinite propagation and is quickly distributed in space. However, since infinite propagation in a petri dish is unlikely, the diffusion term is described as diffusion in a porous medium using Assumption 4, rather than ordinary diffusion, to give it finite propagation.  
 
 The following is a system of partial differential equations, where the reaction term is denoted by $g(x, y, t, u, v)$:
-\begin{gather}  
+$$
 \frac{\partial \mathcal{E}}{\partial t} = \nabla \cdot (D(\mathcal{E}) \nabla \mathcal{E}) \\  
 \frac{\partial v}{\partial t} = \nabla \cdot (D(v) \nabla v) + g(x, y, t, u, v)  
-\end{gather}
+$$
 Here, $D(f)$ represents the diffusion coefficient, which depends on the function $f$, and is given by $D(f) = mf^{m-1}$, where $m > 1$ is a constant, as seen in the porous medium equation.
 
 Next, we derive the reaction term based on the Michaelis-Menten equation, where the reaction mechanism is as follows:
-\begin{gather}  
+$$
 \mathcal{E} + u \overset{k_{+1}}{\underset{k_{-1}}{\rightleftharpoons}} \mathcal{E} u \overset{k_{+2}}{\rightarrow} \mathcal{E} + v  
-\end{gather}
+$$
 
 To isolate the reaction term, we consider an ordinary differential equation (ODE) involving only the time derivative. We focus on the concentrations of the complex $[\mathcal{E} u]$ (between $\mathcal{E}$ and $u$) and the product $v$:
-\begin{gather}  
+$$
 \frac{d[\mathcal{E} u]}{dt} = k_{+1} \mathcal{E}u - (k_{-1} + k_{+2})[\mathcal{E} u] \\  
 \frac{dv}{dt} = k_{+2} [\mathcal{E} u]  
-\end{gather}
+$$
 
 Assuming that $[\mathcal{E} u]$ reaches a steady state, i.e., $d\mathcal[{E} u]/{dt} = 0$, we can substitute this into the second equation to obtain:
-\begin{gather}  
+$$
 \frac{dv}{dt} = V_{\text{max}} \frac{u}{K_M + u}  
-\end{gather}
+$$
 
 where $V_{\text{max}} = k_{+2} \mathcal{E}_T$ and $K_M = \frac{k_{-1} + k_{+2}}{k_{+1}}$.
 
 Finally, the following system of partial differential equations is derived from the above considerations:
-\begin{gather}  
+$$
 \frac{\partial \mathcal{E}}{\partial t} = \nabla \cdot (D(\mathcal{E}) \nabla \mathcal{E}) \\  
 \frac{\partial v}{\partial t} = \nabla \cdot (D(v) \nabla v) + V_{\text{max}} \frac{u}{K_M + u}  
-\end{gather}
+$$
 
 
 ## Parameter estimation
@@ -112,4 +112,416 @@ FU_data = np.array([0, 2, 5, 10, 25, 50])
 diameter_data = np.array([0, 0.55, 0.60, 0.70, 0.89, 1.21])
 
 # Convert diameter to radius (in cm)  
-radius_data = diameter_data / 2  ... （残り240 KB）
+radius_data = diameter_data / 2  
+```
+
+### Model Prediction Function
+
+We define a function to predict the degradation radius based on the model parameters and FU.  
+```python  
+# Define the model function to predict the radius  
+def predict_radius(FU, m, V_max, K_M):  
+    # Convert FU to initial NK concentration  
+    E0 = FU_to_concentration(FU)
+
+    # Effective diffusion coefficient based on porous medium equation  
+    D_eff = m * E0 ** (m - 1)
+
+    # Reaction term influenced by Michaelis-Menten kinetics  
+    alpha = V_max / (K_M + E0)
+
+    # Predict radius (simplified model)  
+    R = np.sqrt((2 * D_eff * t) / alpha)  
+    return R  
+```  
+Mathematical explanation:
+
+* Effective Diffusion Coefficient: Incorporate the porous medium assumption to define an effective diffusion coefficient $D_\text{eff}$ dependent on $m$, where $\mathcal{E}_0$ is the initial concentration of NK.
+$$
+D_\text{eff} = m \mathcal{E}_0^{m-1}  
+$$
+
+* Reaction Term: Derived from the Michaelis-Menten kinetics, influencing the parameter $\alpha$.
+$$ 
+\alpha = \frac{V_\text{max}}{K_M + \mathcal{E}_0}  
+$$
+
+* Predicted Radius: $R$ where $t$ is the incubation time.
+$$
+R = \sqrt{\frac{2D_\text{eff}\cdot t}{\alpha}}   
+$$
+
+* Conversion from FU to Concentration: Establish a calibration to convert FU to initial NK concentration $\mathcal{E}_0$. For this procedure, we assume a linear relationship. The conversion factor $k$ must be determined experimentally or based on literature values.
+$$
+\mathcal{E}_0 = k \times \text{FU}  
+$$
+
+### Objective Function
+
+We define an objective function that computes the sum of squared errors between the observed radii and the radii predicted by the model. The goal is to minimize this error.  
+```python  
+# Objective function to minimize  
+def objective(params):  
+    m, V_max, K_M = params  
+    R_pred = predict_radius(FU_data, m, V_max, K_M)  
+    error = radius_data - R_pred  
+    return np.sum(error ** 2)  
+```
+
+### Optimization
+
+Using the `scipy.optimize.minimize` function, we optimize the parameters to minimize the objective function.  
+```python  
+# Initial guesses for the parameters  
+initial_params = [1.5, 1e-3, 1e-6]
+
+# Bounds for the parameters to ensure physical feasibility  
+bounds = [(1.0, 3.0),  # m \> 1 for porous medium  
+          (1e-5, 1e-1),  # V_max positive  
+          (1e-8, 1e-4)]  # K_M positive
+
+# Perform the optimization  
+result = minimize(objective, initial_params, bounds=bounds)
+
+# Extract the estimated parameters  
+m_est, V_max_est, K_M_est = result.x  
+```
+
+## FU Estimation
+
+With the estimated parameters, we developed a method to estimate the FU of an unknown sample from the observed degradation radius. This inverse problem involves solving for FU given a radius, using the model and parameters.
+
+### Inverse Function for Estimation
+
+We define a function to estimate FU from the observed radius by finding the root of the equation that equates the predicted radius to the observed radius.  
+```python  
+# Function to estimate FU from observed radius  
+def estimate_FU_from_radius(R_observed, m, V_max, K_M):  
+    # Define the function whose root we want to find  
+    def func(FU):  
+        R_pred = predict_radius(FU, m, V_max, K_M)  
+        return R_pred - R_observed
+
+    # Set reasonable bounds for FU (e.g., 0 to 1000 FU)  
+    FU_min = 0  
+    FU_max = 1000
+
+    # Use root-finding method  
+    try:  
+        FU_est = brentq(func, FU_min, FU_max)  
+    except ValueError:  
+        # If the function does not change sign in the interval, return NaN  
+        FU_est = np.nan  
+    return FU_est  
+```  
+We solve for FU in the equation:  
+$$
+R_\text{predicted}(\text{FU}, \, m, \, V_\text{max}, \, K_M) - R_\text{observed} = 0  
+$$
+
+### Estimating FU for Each Observed Radius
+
+We apply the estimation function to each observed radius.  
+```python  
+# Estimate FU for each observed radius  
+estimated_FU = []  
+for R_obs in radius_data:  
+    FU_est = estimate_FU_from_radius(R_obs, m_est, V_max_est, K_M_est)  
+    estimated_FU.append(FU_est)
+
+estimated_FU = np.array(estimated_FU)  
+```
+
+## Results
+
+In this study, we successfully estimated parameters $m$, $V_\text{max}$, and $K_M$ governing the diffusion and reaction kinetics of NK in the fibrin gel using our mathematical model. Subsequently, we developed a method to estimate FU from observed degradation radii in the halo assay. 
+
+### Estimated Parameters
+
+Using the provided experimental data and our diffusion-reaction model, we performed parameter estimation to determine the values of $m$, $V_\text{max}$, and $K_M$. The optimization process minimized the sum of squared errors between the observed degradation radii and those predicted by the model.
+
+Estimated parameter values:
+
+* $m$ (Porous Medium Parameter): $1.056$  
+* $V_\text{max}$ (Maximum Reaction Rate): $ 1.716 \times 10^{-3}$ mol/(L·h)  
+* $K_M$ (Michaelis Constant): $1.348 \times 10^{-5}$ mol/L
+
+The estimated parameters were used to predict the degradation radii corresponding to the experimental FU values. The predicted radii closely matched the observed data, indicating a good fit for the model.
+
+<Image src={image3} alt="test" format="avif" width={1080} />
+Figure 2: Comparison between experimental degradation radii and model-predicted radii using the estimated parameters.
+
+Performance Metrics: 
+
+* Sum of Squared Errors (SSE): $0.0002$ cm^2  
+* Coefficient of Determination ($R^2$): $0.9989$  
+* Mean Absolute Error (MAE): $0.0047$ cm  
+* Root Mean Squared Error (RMSE): $0.0061$ cm
+
+These metrics demonstrate the model accurately captures the relationship between FU and degradation radius, with an $R^2$ value indicating a high degree of correlation.
+
+Using the results from the parameter estimation, we simulated the spatial distribution of Nattokinase (E) and its degradation product (v) over time. It solves a diffusion-reaction system within a circular region using a numerical grid and tracks how the concentration of NK and its product evolves due to both diffusion and reaction processes. The results are visualized as heat maps, showing the concentration of NK and its degradation product in two separate plots after a specified simulation time.
+
+<Image src={image4<Image src={image2} alt="test" format="avif" width={1080} />} alt="test" format="avif" width={1080} />
+Figure 3: Spatial Distribution of Nattokinase (E) and Degradation Product (v) After Simulating for 8 Arbitrary Time Units
+
+### Estimated FU
+
+With estimated parameters, we developed an inverse method to estimate FU from observed degradation radii. This method employs a root-finding algorithm to solve for FU given a specific radius, leveraging the established relationship from our diffusion-reaction model.
+
+Applying the FU estimation method to the observed radii, yielded the following estimated FU values [Table 1]:
+
+| Observed Radius (cm) | Actual FU | Estimated FU |
+| :---- | :---- | :---- |
+| 0.00 | 0 | 0.00 |
+| 0.275 | 2 | 2.05 |
+| 0.300 | 5 | 4.95 |
+| 0.350 | 10 | 10.10 |
+| 0.445 | 25 | 24.80 |
+| 0.605 | 50 | 50.20 |
+
+Table 1: Comparison of actual FU values and estimated FU values from observed degradation radii.
+
+<Image src={image4} alt="test" format="avif" width={1080} />
+Figure 4: Scatter plot comparing actual FU values with those estimated from observed radii.
+
+The estimated FU values closely align with the actual FU measurements, demonstrating the reliability and accuracy of our estimation method. The minimal discrepancies observed are within the experimental error margins, validating the effectiveness of the model in quantifying NK activity based solely on the halo assay measurements.
+
+Statistical Summary:
+
+* Sum of Squared Errors (SSE): $5.3443$ FU^2  
+* Coefficient of Determination ($R^2$): $0.9971$  
+* Mean Absolute Error (MAE): $0.6776$ FU  
+* Root Mean Squared Error (RMSE): $0.9438$ FU
+
+These statistics underscore the high precision of FU estimations derived from our model.
+
+**We have enhanced our program to allow users to input arbitrary degradation radii, enabling the tool to provide corresponding estimated FU based on our calibrated model. When measuring the NK on the Petri dish, it spread out in an elliptical shape, so the average of the major and minor axes was taken, assuming it to be a circle, and estimates were made based on the experimental results. Estimated FU values are shown below[Fig.5].**  
+<Image src={image5} alt="test" format="avif" width={1080} />
+<Image src={image6} alt="test" format="avif" width={1080} />
+<Image src={image7} alt="test" format="avif" width={1080} />
+Figure 5: FU is estimated from the experimental data. The data were taken every 4 hours for 16hrs, 20hrs, and 24hrs.
+
+## Discussion
+
+By fitting our model to the experimental data, we obtained estimates for the parameters $m$, $V_\text{max}$, and $K_M$. These parameters provide insights into:
+
+* Diffusion Characteristics: The parameter $m$ relates to the diffusion of NK in the fibrin gel, considering the porous medium nature of the gel.  
+* Enzymatic Activity: $V_\text{max}$ and $K_M$ are characteristic of the enzymatic reaction kinetics, representing the maximum reaction rate and the Michaelis constant, respectively.
+
+The model’s predictions closely matched the experimental data, indicating that our assumptions and simplifications were reasonable for this system. 
+
+Utilizing the estimated parameters, we successfully estimated the FU from observed degradation radii. The estimated FU values were in good agreement with the actual FU values, demonstrating the model’s effectiveness in quantifying NK activity based solely on the halo assay measurements.
+
+Although our calculations showed precision to a large extent, there are some assumptions and limitations we have to be aware of, which includes
+
+* Simplifications: The model simplifies the complex diffusion-reaction system to make the problems tractable.  
+* Parameter Sensitivity: The accuracy of FU estimation depends on the precision of the estimated parameters. Sensitivity analysis may be necessary.  
+* Conversion Factor: The relationship between FU and NK concentration requires calibration for accurate conversions.
+
+# Metabolism analysis (Flux Balance Analysis)
+
+## Materials and Methods
+
+First, we obtained metabolic pathway data in SBML format for *B. subtilis* from AGORA[5] (filename: “Bacillus_subtilis_str_168.xml”). Flux Balance Analysis was performed using COBRApy [6]. To theoretically set the NB medium, we set only the amino acids from the initial medium set in COBRApy at max flux (flux: 1000.0) and set all other fluxes to 0.0 to simulate the NB medium. The NB + Glucose medium, which was not tested in this study, was also simulated using the same method as the NB medium to clarify the optimal medium for future NK production.  
+
+The following is the COBRApy code and procedure.
+
+### Reading AGORA data in COBRApy
+We start by loading AGORA data into COBRApy, which provides the metabolic models for the analysis.
+```python  
+sbml_path = "Bacillus_subtilis_str_168.xml"  
+model = read_sbml_model(sbml_path)  
+```
+
+### Setting up the culture medium environment
+Since we want to implement NB medium in COBRApy, we rewrite the pre-defined medium environment so that all 20 amino acids can be imported with the same maximum and minimum values.
+```python  
+mediums = model.medium
+
+non_amino_acids = [Please check on our GitHub repository]  
+for key, value in mediums.items():  
+    for lis in non_amino_acids:  
+        if lis == key:  
+            mediums[key] = 0.0  
+        else:  
+            continue
+
+# Check the output to identify the wrong amino acids
+
+aa = 0  
+for v in mediums.values():  
+    if v != 0:  
+        aa += 1
+
+model.medium = mediums  
+```
+
+### Adding a Reaction to the data to obtain all 20 NB medium-derived amino acids
+We add a reaction to the loaded data that enables the uptake of all 20 amino acids derived from the NB medium simultaneously.
+```python  
+# Set the new Reaction for NK output
+
+NK_reaction = Reaction("NK_output")  
+NK_reaction.name = "NK_output"  
+NK_reaction.subsystem = "Pseudo production of NK"  
+NK_reaction.lower_bound = 0  
+NK_reaction.upper_bound = 1000
+
+NK_reaction  
+```
+
+### Calculating amino acid usage and assigning stoichiometric coefficients
+We calculate the usage of each of the 20 amino acids based on the amino acid sequence of NK [7] and assign the appropriate stoichiometric coefficients to the reaction defined in the previous step.
+```python  
+import collections
+
+nk_aa = "This data from NCBI protein databank ABM97611.1"  
+one_to_full_name = {  
+    "A": "L-alanine",  
+    "R": "L-arginine",  
+    "N": "L-asparagine",  
+    "D": "L-aspartic acid",  
+    "C": "L-cysteine",  
+    "Q": "L-glutamine",  
+    "E": "L-glutamic acid",  
+    "G": "L-glycine",  
+    "H": "L-histidine",  
+    "I": "L-isoleucine",  
+    "L": "L-leucine",  
+    "K": "L-lysine",  
+    "M": "L-methionine",  
+    "F": "L-phenylalanine",  
+    "P": "L-proline",  
+    "S": "L-serine",  
+    "T": "L-threonine",  
+    "W": "L-tryptophan",  
+    "Y": "L-tyrosine",  
+    "V": "L-valine"  
+}
+
+c = dict(collections.Counter(nk_aa))
+
+counted_dict = {}
+
+for k, v in c.items():  
+    counted_dict[one_to_full_name[k]] = v  
+```
+
+### Adding a Reaction to discharge NK
+A new reaction is added to represent the secretion of NK, based on the results from the previous step.
+```python  
+nattokinase = Metabolite("Nattokinase", name="nattokinase", compartment="c")
+
+metabolites_dict = {}  
+for k in counted_dict.keys():  
+    for i in range(len(model.metabolites)):  
+        if (k == model.metabolites[i].name) & (model.metabolites[i].compartment == "c"):  
+            metabolites_dict[model.metabolites[i]] = -int(counted_dict[k])
+
+# Add the NK  
+metabolites_dict[nattokinase] = 1
+
+NK_reaction.add_metabolites(metabolites_dict)  
+# print(metabolites_dict)  
+NK_reaction.reaction  
+# Balanced for analysis  
+exchange_nattokinase = Reaction('EX_nattokinase')  
+exchange_nattokinase.name = 'Exchange reaction for Nattokinase'  
+exchange_nattokinase.lower_bound = 0  
+exchange_nattokinase.upper_bound = 1000
+
+exchange_nattokinase.add_metabolites({nattokinase: -1})
+
+model.add_reactions([exchange_nattokinase])
+
+model.add_reactions([NK_reaction])  
+```
+
+### Setting the Reaction created in the previous step as the Objective
+The reaction for NK secretion created in the previous step is set as the objective for optimization in COBRApy.
+```python  
+model.objective = "NK_output"  
+```
+
+### Performing optimization
+We run the optimization step, which is a standard COBRApy operation, to analyze the flux distributions.
+```python  
+solution = model.optimize()  
+```
+
+### Selecting Reactions with higher flux
+We set a threshold value of $10^{-6}$ and filter out the reactions, selecting only those with a higher flux value for further analysis.
+```python  
+fluxes = solution.fluxes  
+active_reactions = [reaction for reaction in model.reactions if abs(fluxes[reaction.id]) > 1e-6]
+
+active_metabolites = set()  
+for reaction in active_reactions:  
+    active_metabolites.update(reaction.metabolites)
+
+active_model = Model("Active_Model")  
+active_model.add_metabolites(active_metabolites)  
+active_model.add_reactions(active_reactions)  
+active_model.objective = model.objective
+
+write_sbml_model(active_model, "active_model.xml")
+
+print(active_model.summary())
+
+active_subsystems = set()  
+for reaction in active_reactions:  
+    if reaction.subsystem:  
+        active_subsystems.add(reaction.subsystem)
+
+print("Utilized Subsystem:")  
+for subsystem in active_subsystems:  
+    print(subsystem)  
+```
+
+### Creating an NB + Glucose medium for comparison
+A version of the NB medium with added glucose is created for comparison, following the same steps as described above.
+
+## Results
+
+### Numerical data of FBA
+
+First, the Flux and the number of Reaction pathways utilized in each medium are shown below: the Flux was 13.09 in the NB-only medium, suggesting that the Flux increased to 21.89 when Glucose was added to NB [Table 2]. The number of Reaction pathways was 22 mutually, indicating that NK production must go through about 22 reaction pathways.
+
+| **Medium** | **Flux** | **Reaction number** |
+| :---- | :---- | :---- |
+| NB only | 13.09 | 22 |
+| NB + Glucose | 21.89 | 22 |
+
+Table 2: Comparison of Flux and Reaction Count in Different Media
+Table 2 shows the flux values for the two media conditions. The flux for 'NB only' was 13.09, while for 'NB + Glucose,' it was 21.89. Both conditions share the same reaction count, with 22 reactions.
+
+### Pathway data of FBA
+
+Then, we examined the specific differences in reaction pathways between the two media environments. First, among the 22 reaction pathways, four pathways were identified as 'Respiration', 'Glycerophospholipid metabolism', 'Fructose and mannose metabolism', and 'Unassigned' in the NB + Glucose medium, but not in the NB + Glucose medium [Table 2]. mannose metabolism', and 'Unassigned' [Table 3]. Among the 22 reaction pathways, the pathways that were passed through in the NB + Glucose medium but not in the NB medium were 'Pyrimidine synthesis', 'Sulfur metabolism', 'Pyrimidine catabolism', 'Methionine and cysteine metabolism' [Table 2]. 
+
+| **Pathways not utilized in:** | **Pathway 1**               | **Pathway 2**                   | **Pathway 3**                  | **Pathway 4**                      |
+|:------------------------------|:-----------------------------|:---------------------------------|:---------------------------------|:-----------------------------------|
+| **NB + Glucose medium**          | Respiration                  | Glycerophospholipid metabolism   | Fructose and mannose metabolism  | Unassigned                        |
+| **NB medium**                  | Pyrimidine synthesis          | Sulfur metabolism                | Pyrimidine catabolism            | Methionine and cysteine metabolism |
+
+Table 3: Pathways Unutilized in Each Medium
+
+## Discussion
+
+The results suggest that flux was relatively higher in the NB + Glucose culture environment than in the NB-only culture environment. The reason for the higher flux in the NB + Glucose medium is shown in [Table 2], which indicates that in the NB + Glucose medium, *B. subtilis natto* was more sensitive to amino acids such as “Sulfur metabolism” and “Methionine and Cysteine metabolism” than *B. subtilis natto*. This may be because *B. subtilis natto* can produce amino acids necessary for NK production inside the bacteria via pathways related to amino acid production such as “Sulfur metabolism” and “Methionine and Cysteine metabolism” in the NB + Glucose medium. Furthermore, the results in [Table 2] suggest that the bacteria produce sugars inside their bodies using “Fructose and Mannose metabolism” because NB medium alone is insufficient to produce sugars. However, this pathway is known to be suppressed during NK production [2]. This may be the reason why the metabolic pathway cannot be optimized for NK production, and this may be the cause of the low flux in the medium of NB alone. **These results suggest that it is appropriate to use a medium containing sugar when culturing NK-producing *B. subtilis natto* in the future.** 
+
+# References
+
+[1] Dabbagh, F., Negahdaripour, M., Berenjian, A., Behfar, A., Mohammadi, F., Zamani, M., ... & Ghasemi, Y. (2014). Nattokinase: production and application. *Applied microbiology and biotechnology*, *98*, 9199-9206.  
+[2] Unrean, P., & Nguyen, N. H. (2013). Metabolic pathway analysis and kinetic studies for production of nattokinase in Bacillus subtilis. *Bioprocess and biosystems engineering*, *36*, 45-56.  
+[3] Weng, Y., Yao, J., Sparks, S., & Wang, K. Y. (2017). Nattokinase: an oral antithrombotic agent for the prevention of cardiovascular disease. *International journal of molecular sciences*, *18*(3), 523\.  
+[4] Wufsus, A. R., Macera, N. E., & Neeves, K. B. (2013). The hydraulic permeability of blood clots as a function of fibrin and platelet density. *Biophysical journal*, *104*(8), 1812-1823.  
+[5] Heinken, A., Acharya, G., Ravcheev, D. A., Hertel, J., Nyga, M., Okpala, O. E., ... & Thiele, I. (2020). AGORA2: Large scale reconstruction of the microbiome highlights wide-spread drug-metabolising capacities. *BioRxiv*, 2020-11.  
+[6] Ebrahim, A., Lerman, J. A., Palsson, B. O., & Hyduke, D. R. (2013). COBRApy: constraints-based reconstruction and analysis for python. *BMC systems biology*, *7*, 1-6.  
+[7] NCBI database Accession: ABM97611.1: [https://www.ncbi.nlm.nih.gov/protein/ABM97611.1](https://www.ncbi.nlm.nih.gov/protein/ABM97611.1)  
+[8] Pinontoan, R., Sanjaya, A., & Jo, J. (2021). Fibrinolytic characteristics of Bacillus subtilis G8 isolated from natto. *Bioscience of Microbiota, Food and Health*, *40*(3), 144-149.
+
+[image1]: <data:image/png;base64,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... （残り240 KB）
+model_v2.md
+290 KB
