@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div>
+    <div className="pt-[4vh]">
       <a href="#menu">
         <img
           className="w-[4vw] absolute right-[7%] mt-[1vh]"
@@ -9,12 +9,12 @@ export default function Footer() {
         />
       </a>
       <div className="flex justify-center items-center h-[20vh] mt-[8vh] bg-[#ECF0F3]">
-        <img src="/sponsor.webp" className="h-[16vh] mr-[5vw]" alt="" />
+        <img src="/sponsor.webp" className="w-[60vw] mr-[1vw]" alt="" />
 
         <div className="flex">
           <img
             src="/footer-logo.png"
-            className="h-[10vh] mr-[2vw] flex justify-center items-center"
+            className="h-[10vh] mr-[0vw] flex justify-center items-center"
           />
           <div className="flex justify-center items-center">
             <div>
