@@ -57,8 +57,6 @@ $u(x, y, 0) = \text{const.}$ that is, we assume that the time-initial value spac
 **Assumption 2.**  
 The action sites of NK on fibrin are as shown in the figure [Fig. 1], ...-[node]-[action site]-[node]-[action site]-[action site]-[node]-[action site]-.... [3]; i.e., assuming that the action site exists as a “point” on the fibrin fiber, it is possible to reduce the discussion to a reaction kinetics discussion by focusing only on the action site. In other words, the law of mass action can be used.  
 
-<Image src={image1} alt="test" format="avif" width={1080} />
-
 Figure 1: Shows the action site of fibrin and NK, which are thought to be in a chain structure.
 
 **Assumption 3．**  
@@ -250,7 +248,7 @@ Estimated parameter values:
 
 The estimated parameters were used to predict the degradation radii corresponding to the experimental FU values. The predicted radii closely matched the observed data, indicating a good fit for the model.
 
-<Image src={image2} alt="test" format="avif" width={1080} />
+
 Figure 2: Comparison between experimental degradation radii and model-predicted radii using the estimated parameters.
 
 Performance Metrics: 
@@ -264,7 +262,7 @@ These metrics demonstrate the model accurately captures the relationship between
 
 Using the results from the parameter estimation, we simulated the spatial distribution of Nattokinase (E) and its degradation product (v) over time. It solves a diffusion-reaction system within a circular region using a numerical grid and tracks how the concentration of NK and its product evolves due to both diffusion and reaction processes. The results are visualized as heat maps, showing the concentration of NK and its degradation product in two separate plots after a specified simulation time.
 
-<Image src={image3} alt="test" format="avif" width={1080} />
+
 Figure 3: Spatial Distribution of Nattokinase (E) and Degradation Product (v) After Simulating for 8 Arbitrary Time Units
 
 ### Estimated FU
@@ -296,13 +294,11 @@ Statistical Summary:
 * Mean Absolute Error (MAE): $0.6776$ FU  
 * Root Mean Squared Error (RMSE): $0.9438$ FU
 
-These statistics underscore the high precision of FU estimations derived from our model.
 
 **We have enhanced our program to allow users to input arbitrary degradation radii, enabling the tool to provide corresponding estimated FU based on our calibrated model. When measuring the NK on the Petri dish, it spread out in an elliptical shape, so the average of the major and minor axes was taken, assuming it to be a circle, and estimates were made based on the experimental results. Estimated FU values are shown below[Fig.5].**  
 <Image src={image5} alt="test" format="avif" width={1080} />
 <Image src={image6} alt="test" format="avif" width={1080} />
 <Image src={image7} alt="test" format="avif" width={1080} />
-
 Figure 5: FU is estimated from the experimental data. The data were taken every 4 hours for 16hrs, 20hrs, and 24hrs.
 
 ## Discussion
@@ -523,4 +519,4 @@ The results suggest that flux was relatively higher in the NB + Glucose culture 
 [5] Heinken, A., Acharya, G., Ravcheev, D. A., Hertel, J., Nyga, M., Okpala, O. E., ... & Thiele, I. (2020). AGORA2: Large scale reconstruction of the microbiome highlights wide-spread drug-metabolising capacities. *BioRxiv*, 2020-11.  
 [6] Ebrahim, A., Lerman, J. A., Palsson, B. O., & Hyduke, D. R. (2013). COBRApy: constraints-based reconstruction and analysis for python. *BMC systems biology*, *7*, 1-6.  
 [7] NCBI database Accession: ABM97611.1: [https://www.ncbi.nlm.nih.gov/protein/ABM97611.1](https://www.ncbi.nlm.nih.gov/protein/ABM97611.1)  
-[8] Pinontoan, R., Sanjaya, A., & Jo, J. (2021). Fibrinolytic characteristics of Bacillus subtilis G8 isolated from natto. *Bioscience of Microbiota, Food and Health*, *40*(3), 144-149.
+
