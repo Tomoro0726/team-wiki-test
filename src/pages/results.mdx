@@ -1,0 +1,114 @@
+---
+layout: '../layouts/markdown.astro'
+title: 'Markdown design'
+Contributor: ["contributor0","contributor2"]
+---
+import image1 from '../assets/results/image/results_fig1.jpg';
+import image2 from '../assets/results/image/results_fig2.jpg';
+import image3 from '../assets/results/image/results_fig3.jpg';
+import image4 from '../assets/results/image/results_fig4.jpg';
+import image5 from '../assets/results/image/results_fig5.jpg';
+import image6 from '../assets/results/image/results_fig6.jpg';
+import image7 from '../assets/results/image/results_fig7.jpg';
+import image8 from '../assets/results/image/results_fig8.jpg';
+import image9 from '../assets/results/image/results_fig9.jpg';
+import image10 from '../assets/results/image/results_fig10.jpg';
+import image11 from '../assets/results/image/results_fig11.jpg';
+import image12 from '../assets/results/image/results_fig12.jpg';
+
+
+import { Image } from 'astro:assets';
+
+# Results
+
+We were successfully able to deliver the constructed plasmids into two strains of *B. subtilis natto*, BEST195 and S903, and confirmed that nattokinase production increased compared to the wild types. This section outlines the major results on the checkpoints of our methods process.
+
+# Transformation into DH5α
+
+Direct transformation of the plasmid into C600 would result in erratic transformation. To combat this, we first used DH5α as the competent cell to increase the load of the plasmid created (pNK\_1).
+
+## Colony PCR of *E.coli DH5α* colonies
+
+PCR and gel electrophoresis was performed on the selected colonies, and bands at the expected lengths were observed for all samples, excluding our control samples containing just the plasmid \<05\> and the sample taken from an unmodified DH5α/\<05\> colony.
+
+<Image src={image1} alt="test" format="avif" width={1080} />
+
+*\<p style="text-align: center;"\>\<em\>(Fig.1. Gel electrophoresis 1 of colonies)\</em\>\</p\>*
+
+# Transformation into C600
+
+Because B.subtilis 168 cannot take in monomers, we used C600 as the competent cell  to create dimers and trimers to transfer into B.subtilis 168\. 
+
+## Colony PCR of *E.coli C600* colonies
+
+<Image src={image2} alt="test" format="avif" width={1080} />
+
+*\<p style="text-align: center;"\>\<em\>(Fig.2. Gel electrophoresis 1 of colonies)\</em\>\</p\>*
+
+# Transformation into *B. subtilis* 168
+
+B.subtilis subsp.natto cannot directly absorb plasmids from gram negative bacterial strains. Therefore, we first transformed the plasmid derived from C600 into B.subtilis 168\.  
+<Image src={image3} alt="test" format="avif" width={1080} />
+*\<p style="text-align: center;"\>\<em\>(Fig.3. Gel electrophoresis 1 of colonies)\</em\>\</p\>*
+
+# Conjugation from *B. subtilis 168* to *B. subtilis subsp. natto BEST195* and *S903*
+
+Because B. subtilis subsp. natto cannot be transformed directly, we used bacterial conjugation as a method to deliver the constructed plasmids. 
+
+## Morphology of colonies on selection plate
+
+Below are images of all petri dishes used to culture the results of the conjugation experiment (Fig. 3). There were only small colonies (\<1mm radius) on the negative control plates, and bigger, more visible and opaque colonies on the experimental plates. Moreover, when cultured onto another dish, the colonies formed were characteristic of *B. subtilis subsp. natto*; bigger and more opaque colonies. From this colonial morphology we were able to tell that the colonies were those of *B. subtilis subsp. natto*.  
+*\<p style="text-align: center;"\>\<em\>(Fig.4. Images of all selection plates of conjugation results)\</em\>\</p\>*
+
+## Colony PCR of *B. subtilis subsp. natto* colonies
+
+PCR and gel electrophoresis was performed on the selected colonies, and bands at the expected lengths were observed for at least one colony from each combination of donors and recipients, except for *BEST195*/\<05\>.  
+<Image src={image4} alt="test" format="avif" width={1080} />
+*\<p style="text-align: center;"\>\<em\>(Fig.5. Gel electrophoresis 1 of colonies)\</em\>\</p\>*
+
+Bacteria from the colony on the BEST195/\<05\> plate was cultured in liquid NB medium, and PCR was performed again. This time, a band was observed at the expected length.
+
+<Image src={image5} alt="test" format="avif" width={1080} />
+
+*\<p style="text-align: center;"\>\<em\>(Fig.6. Gel electrophoresis 1 of colonies)\</em\>\</p\>*
+
+## Conclusion
+
+Because of the colonial morphology and the gel electrophoresis results, it can be concluded that conjugation was successful; the colonies on the selection plates were conjugants because they were *B. subtilis subsp. natto* **and** possessed the plasmids used for the conjugation.
+
+# Fibrin plate assay and confirmation of NK production increase
+
+Nattokinase breaks down fibrin, and therefore we used the fibrin plate assay in order to assess the fibrinolytic activities of nattokinase derived from various strains.
+
+### Fibrin plate assay using NB medium culture
+
+Colonies that were found to be successfully conjugated were cultured in NB medium overnight. The samples were diluted to have equal OD values so that there is equal number of cells (approximately 4\*10^4). The diluted samples were injected inside small holes made in the dishes.
+
+<Image src={image6} alt="test" format="avif" width={1080} />
+*\<p style="text-align: center;"\>\<em\>(Fig.7. Fibrin plate assay of S903 in NB medium, 24 hours after injection of samples)\</em\>\</p\>*
+
+<Image src={image7} alt="test" format="avif" width={1080} />
+
+*\<p style="text-align: center;"\>\<em\>(Fig. 8\. Graph of experimental data, average length of halo every 4 hours)\</em\>\</p\>*
+
+The *B. subtilis subsp. natto*. *S903* with pCJspc7 showed the smallest halo, followed by the wild type, pNK1 and finally pNK5. 
+
+<Image src={image8} alt="test" format="avif" width={1080} />
+*\<p style="text-align: center;"\>\<em\>(Fig.9. Fibrin plate assay of BEST195 in NB medium, 24 hours after injection of samples)\</em\>\</p\>*
+
+<Image src={image9} alt="test" format="avif" width={1080} />
+*\<p style="text-align: center;"\>\<em\>(Fig.10. Graph of experimental data, average length of halo every 4 hours)\</em\>\</p\>*
+
+The *B. subtilis subsp. natto*. BEST195 showed similar results, with the wild type producing the smallest halo, followed by pCJspc7, pNK1 and finally pNK5. 
+
+### Fibrin plate assay using LB medium culture
+
+The strains were similarly cultured in LB medium and used for fibrin plate assay.
+
+<Image src={image10} alt="test" format="avif" width={1080} />
+*\<p style="text-align: center;"\>\<em\>(Fig.11. Fibrin plate assay of S903 in LB medium, 24 hours after injection of samples)\</em\>\</p\>*
+
+<Image src={image11} alt="test" format="avif" width={1080} />
+*\<p style="text-align: center;"\>\<em\>(Fig.12. Fibrin plate assay of BEST195 in LB medium, 24 hours after injection of samples)\</em\>\</p\>*
+
+The plasmids constructed by us, pNK1 and pNK5, consistently showed the biggest halos.
