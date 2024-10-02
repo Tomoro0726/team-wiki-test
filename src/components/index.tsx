@@ -14,7 +14,7 @@ export default function Index(index: any) {
   indexList.pop();
 
   return (
-    <div className="h-[80vh] overflow-y-auto hidden-scrollbar">
+    <div className="h-[80vh] overflow-y-auto scroll-b pr-[2px]">
       {indexList.map((item: any, index: any) => (
         <div key={index} className={`flex items-start ml-[1.7vw] h-min`}>
           <div className="flex justify-center [flex-flow:column] items-center align-middle">

@@ -81,3 +81,19 @@ body {
 .hidden-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.scroll-b::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-b::-webkit-scrollbar-thumb {
+  background: #c6c9cb;
+  border-radius: 4px;
+  background-clip: padding-box; /* 背景を切り取る */
+}
+
+.scroll-b::-webkit-scrollbar-track {
+  /* 上下に余白を付ける */
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
