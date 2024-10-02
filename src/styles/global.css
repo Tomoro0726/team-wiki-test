@@ -1,73 +1,83 @@
 body {
-	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-		"Hiragino Sans", Meiryo, sans-serif;
-	font-weight: 600;
-	color: #4d4d4d;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d;
 }
 .nav-menu {
-	color: #4d4d4d;
+  color: #4d4d4d;
 }
 
 .menu-list {
-	display: flex;
-	justify-content: center;
-	margin-right: 1vw;
+  display: flex;
+  justify-content: center;
+  margin-right: 1vw;
 }
 
 .menu-item {
-	position: relative;
-	padding: 1vh;
-	padding-left: 1.5vw;
-	padding-right: 1.5vw;
-	&:hover {
-		background-color: #e2e2e2;
-	}
+  position: relative;
+  padding: 1vh;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  &:hover {
+    background-color: #e2e2e2;
+  }
 }
 .add-padding {
-	padding-left: 1vw;
-	padding-right: 2.8vw;
+  padding-left: 1vw;
+  padding-right: 2.8vw;
 }
 
 /* メニューアイテムのホバースタイル */
 .menu-item:hover .drop-menu-list {
-	visibility: visible;
+  visibility: visible;
 }
 
 .menu-item a {
-	align-items: center;
-	color: #7a7c7d;
+  align-items: center;
+  color: #7a7c7d;
 
-	font-size: 1.3vw;
-	display: flex;
-	justify-content: center;
-	text-decoration: none;
+  font-size: 1.3vw;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .drop-menu-list {
-	background-color: #ecf0f3;
-	visibility: hidden;
-	position: absolute;
-	left: 0;
-	right: 0;
-	z-index: 1;
-	width: max-content;
-	text-align: center;
-	background-color: #e2e2e2;
-	width: 100%;
-	padding-bottom: 1vh;
+  background-color: #ecf0f3;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: max-content;
+  text-align: center;
+  background-color: #e2e2e2;
+  width: 100%;
+  padding-bottom: 1vh;
 }
 
 .drop-menu-item {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	padding-left: 2px;
-	a {
-		font-weight: 400;
-		font-size: 1vw;
-		margin-left: 1.5vw;
-	}
-	.add-padding-a {
-		margin-left: 1vw;
-	}
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 2px;
+  a {
+    font-weight: 400;
+    font-size: 1vw;
+    margin-left: 1.5vw;
+  }
+  .add-padding-a {
+    margin-left: 1vw;
+  }
+}
+
+.hidden-scrollbar {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
 }
