@@ -1,0 +1,177 @@
+---
+layout: '../layouts/markdown.astro'
+title: 'Engineering'
+Contributor: ["contributor11","contributor2"]
+---
+import { Image } from 'astro:assets';
+import image1 from '../assets/Engineering/image/image1.jpg';
+import image2 from '../assets/Engineering/image/image2.jpg';
+import image4 from '../assets/Engineering/image/image4.png';
+import image5 from '../assets/Engineering/image/image5.png';
+import image6 from '../assets/Engineering/image/image6.png';
+import image7 from '../assets/Engineering/image/image7.jpg';
+import image8 from '../assets/Engineering/image/image8.png';
+import image9 from '../assets/Engineering/image/image9.png';
+import image10 from '../assets/Engineering/image/image10.png';
+import image11 from '../assets/Engineering/image/image11.png';
+import image13 from '../assets/Engineering/image/image13.png'
+import image14 from '../assets/Engineering/image/image14.png';
+import image16 from '../assets/Engineering/image/image16.png';
+import Engineering_fig6 from '../assets/Engineering/image/Engineering_fig6.png';
+import Engineering_fig10 from '../assets/Engineering/image/Engineering_fig10.png';
+
+# Engineering Success
+
+Our project aimed to engineer *B. subtilis natto* strains that enhance nattokinase (NK) production, an extracellular fibrinolytic enzyme against blood-clotting thrombosis. As we carefully considered the technical aspects of this research, the engineering decisions were based on published results, computational modeling, and empirical findings derived from our laboratory's investigations. Within this segment of our wiki, we plan to clarify the fundamental DBTL rationales behind our laboratory activities to successfully genetically modify natto bacteria.
+
+## Aims, Uncertainties, and Solutions
+
+The primary goal of our project is to create a plasmid with NK-coding gene, *aprE*, and introduce the plasmid into *B. subtilis natto*. This plasmid, combined with the preexisting metabolic pathway in natto bacteria, will enhance NK production rate and ultimately enable its overproduction to be utilized as an antithrombotic agent.  
+However, through literature search and human-practice activities with experts, we figured that a few uncertainties for this project significantly affect the success of this objective.
+
+1\. *B. subtilis natto* has low natural transformation efficiency.\[1\] Because of this, its not well-established.\[2\] Currently, the most popular way to engineer this chassis is by transformation.  
+Thus, our objective plasmid will initially be transformed into model organism ***B. subtilis*** **168,** and subsequently into ***B. subtilis natto*** **BEST195** via **conjugational transfer**.
+
+2\. Chromosomal DNA of *B. subtilis natto* is highly homologous to *B. subtilis* 168, and when genetically engineering *B. subtilis natto*, parts such as promoters and plasmids are compatible with those of *B. subtilis*. However, despite *B. subtilis* being a model organism for Gram-positive bacteria in laboratories, its iGEM registry parts are still small, with relatively few working parts. This was especially a problem for our project of overproducing a material in *B. subtilis natto*, as two strong constitutive promoters for *B. subtilis* on the registry, BBa\_K780003 and BBa\_K090504, both provide little documentation of its functionality nor results. Finding suitable parts was also a problem when finding shuttle vector plasmid backbones and short terminators that could be used for *B. subtilis*. 
+
+## Design: Delivering plasmids into B. subtilis natto BEST195
+
+**Rough Project Plan: Conjugational transfer from *B. subtilis* 168 to *B. subtilis natto* BEST195**  
+The goal of the project is achieved by inserting *aprE*, the nattokinase encoding gene, into a shuttle vector plasmid and eventually transform them into *B. subtilis natto* BEST195.  
+Thus, our objective plasmid will initially be transformed into *E. coli* DH5α for proliferation, extracted/transferred into *E. coli* C600 (which has the wild-type *recA* gene for plasmid multimerization), then into highly genetically amenable *B. subtilis* 168, eventually transferred to *B. subtilis natto* BEST195 for nattokinase production. 
+
+<Image src={image11} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig. 1\. Plasmid delivery method)</em></p>
+
+**Plasmid: Comparing between native, inducible, and constitutive promoters.**  
+In order to differentiate how different promoters result in various amounts of NK production within the bacteria, we designed three types of plasmids.   
+To prevent leakage/flow-in transcriptions, we've designed to place a T*λM3* terminator before the promoters.
+
+The first, "pNK1", includes P*aprE*, the native promoter of *aprE* in *B. subtilis*. This was designed to simply increase the copy number of the *aprE* gene in a cell and check whether our plasmid will function properly within the experiment.  
+<Image src={image7} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>Fig 2\. pNK1 plasmid design</em></p>
+
+The second, "pNK2", includes P*grac01*,\[5\] an IPTG-inducible promoter harboring *lac* operators. This was to prevent leaky expressions that might hamper cloning, and keep NK yield under control.   
+<Image src={image2} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig. 3. pNK2 promoter design)</em></p>
+
+Finally, "pNK3" includes P*grac212*,\[5\] a strong constitutive promoter that can yield increased production of recombinant proteins. This was aimed for extremely high levels of NK yield.  
+<Image src={image1} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig. 4. pNK3 promoter design)</em></p>
+
+P*grac01* is an IPTG-inducible promoter and P*grac212* is an inducer-free strong constitutive promoter, both are used for overproduction of recombinant proteins. In the referenced study, P*grac01* could repress gene expression about 24-fold in *E. coli* compared to low background levels, and P*grac212* resulted in gene expression up by 53.4%\[5\]. Sequence of their promoter region (-35 to \+1) and the UP element are identical, but they are differentiated by the mRNA controllable stabilizing element (CoSE) attached to the 5’ end of the transcript, which enhances stability of half-lives of mRNA transcripts and allow high production levels of recombinant proteins. \[6\]
+
+If plasmid is transformed into BEST195 as targeted, they should all result in higher production of nattokinase, increasing in the order of pNK1, pNK2, and pNK3. 
+
+## Build: Assembling the sequences
+
+To successfully carry out this project, we carefully planned a tactic to efficiently build our plasmids.
+
+**Primers: Including Terminators and Promoters**  
+The sequences of the parts used in this study are listed below.  
+<Image src={image6} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig 5\. Sequences of T*λM3*, P*aprE*, P*grac01* and *grac212*)</em></p>
+
+To obtain DNA fragment of *aprE* gene containing the terminator-promoter upstream and the terminator downstream the *aprE*, we decided to build primers with sequences of DNA parts (terminators, promoters). The *aprE* gene was amplified with the chromosomal DNA of BEST195. The vector DNA was also amplified by PCR, and then ligated by “In-Fusion” cloning. Instead of ordering custom DNAs, since this project is based on self-cloning, this method can allow us to initiate our wet lab more smoothly from a time perspective.
+
+**Building pNK1**  
+We built the pNK1-F, a primer that includes T*λM3*. Because *aprE* and P*aprE* is a sequence that originally exist in BEST195, this will create the objective insert fragment (T*λM3*\-P*aprE*\-aprE\-TaprE) for in-fusion cloning.
+
+**Building pNK2/pNK3**  
+However, creating a primer with TλM3 with Pgrac01/Pgrac212 will result in a sequence that is at least more than 130 bp long, making it an unsuitable build to conduct PCR. Thus, we decided to create pNK1 first, which has T*λM3* sequences integrated to the vector plasmid. By PCR duplication of pNK1, partially including the T*λM3* sequences, the  vector structure to create pNK2 and pNK3 will be prepared.  
+At the same time, we built pNK2-F and pNK3-F, printers that each include a part of T*λM3*, P*grac01* or P*grac212*. This will create the objective insert fragment (T*λM3*\-P*grac01*/P*grac212*\-*aprE*\-T*aprE*).  
+By in-fusion cloning of the duplicated vector plasmid framework with DNA fragments attained through PCR, we will create pNK2 and pNK3.
+
+<Image src={Engineering_fig6} alt="test" format="avif" width={1080} />
+
+<p style="text-align: center;"><em>(Fig. 6\. Process of constructing plasmids)</em></p>
+
+Thus, we built a promoter with functions listed below.
+
+<Image src={image16} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig 7\. Primers in build 1)</em></p>
+
+**Material Collection and Build**  
+Throughout our experiment, Prof. Kei Asai, an expert in *B. subtilis natto*, helped us with the technical aspects of engineering this unique chassis. He generously presented us with the plasmids and bacteria strains that are crucial for this study, as listed below.
+
+1) pCJspc72, the shuttle vector (*E. coli* and *B. subtilis*) enabling conjugational transfer  
+2) *B. subtilis* 168/pLS20cat, the donor for conjugation and harbor the helper plasmid.  
+3) *B. subtilis natto* BEST195, the recipient of conjugational transfer.  
+4) *B. subtilis* 168 *recA* ::*tet*/pLS20cat, an alternative donor for conjugational transfer. (It has the helper plasmid pLS20cat and its  *recA* gene is deleted)  
+5) *E. coli* C600, the *recA*\+ chassis that will be used for plasmid multimerization.  
+   
+
+The PCR fragments containing *aprE* were cloned into vector pCJspc72 to create pNK1, transformed into *E.coli* DH5α, extracted, and then *E.coli* C600. PCR was conducted on pNK1 to create pNK2 and pNK3, which were similarly transformed into *E. coli* DH5α.   
+The plasmid includes a spectinomycin resistance gene, so each time, the transformed colonies can be formed by using a LB medium containing spectinomycin at the final concentrations of 100 μg/mL.
+
+## Redesign & Rebuild: Addition of spacers between the CoSE and SD sequence in pNK2 and pNK3
+
+However, we realized that primers for pNK2-F and pNK3-F were mistakenly missing spacers between the CoSE and SD sequence. Thus, we added a couple of bases and decided to call this newly designed plasmid pNK4 and pNK5. New primers were built and PCR was conducted on pNK2 and pNK3 to create the plasmid with similar functions, pNK4 and pNK5. From now on, the plasmid with P*grac01* will be called pNK4, and plasmid with P*grac01* will be called pNK5.
+
+<Image src={image10} alt="test" format="avif" width={1080} />
+
+<p style="text-align: center;"><em>(Fig 8\. Rebuilt primers for pNK2 and pNK3, which are from now on pNK4 and pNK5. )</em></p>
+
+<Image src={image8} alt="test" format="avif" width={1080} />
+
+<p style="text-align: center;"><em>(Fig 9\. Snapgene diagrams of pCJspc72, pNK1, pNK4, and pNK5. RFP in the original plasmid (pCJspc72) is replaced by *aprE*.)</em></p>
+
+After In-Fusion, pNK4 and pNK5 were transformed into *E.coli* DH5α. In the initial plan, *lacI* gene had to be cloned into pNK4, that is because *B. subtilis natto* has no genes encoding *lacI* repressor. However, due to lack of time, it was getting difficult to clone *lacI* gene into pNK4. We decided to allocate our laboratory experiment time prioritizing to create a strain with pNK1 and pNK5, and leave pNK4 to come back to later on.
+
+After transformation of pNK1 and pNK5 into *B. subtilis* 168, conjugational transfer to *B. subtilis natto* BEST195 was conducted.  
+<Image src={Engineering_fig10} alt="test" format="avif" width={1080} />
+
+<p style="text-align: center;"><em>(Fig. 10\. Conjugational transfer of plasmids)</em></p>
+
+## Test: Drop-in culture method and natto bean method for fibrin assay
+
+To test nattokinase yield, we adopted the fibrin plate assay. When NK producing cells, such as our BEST195, are placed on the fibrin-rich testing medium, the NK will degrade them and create a transparent halo. Relative NK amounts were determined by diameters of the halo, along with dry lab modeling techniques. This quick testing allowed us to visibly confirm the results fairly easily.
+
+First, we used filter membrane disks, dipped them in the cultures and placed them onto fibrin plates.   
+We also made natto beans with soybeans and the cell cultures, and placed them directly onto fibrin plates.   
+<Image src={image4} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig. 11\. Natto produced using soybeans and B.subtilis natto BEST195)</em></p>
+
+Our goal was to measure the distances between the edge of the colony formed around the bean and the edge of the halo created, and estimate the relative NK production of each strain when cultured with soybean protein.
+
+## Learn: Filter Membranes and Accuracy
+
+<Image src={image13} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig. 12\. Fibrin plates with filter membrane disks after 24 hours)</em></p>
+
+We found that the filter membranes failed to produce highly visible halos, and decided that it would be difficult to measure the effectiveness of our plasmids with this method.
+
+<Image src={image14} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig. 13\. Fibrin plate with natto bean after 24-hour culture)</em></p>
+
+We also found that placing a natto bean directly onto the fibrin plate was insufficient in terms of accuracy. Some liquid on the surface from the medium mixed with the culture, and spread in different directions on the plate, and thus we concluded that this method was too error-prone.
+
+## Retest: Injection method for fibrin assay
+
+We devised another method for the fibrin assay, in which we made holes of approximately 2 mm in diameter using large orifice pipette tips, and injected equal amounts of samples. We prepared three different types of samples.  
+First, the strains we wanted to use to test were cultured in NB and LB liquid medium overnight. Then the samples were diluted to equal OD of 0.5 (=4\*10^4 cells) to ensure that there were equal amounts of cells, and equal amounts of the diluted samples were injected into the holes. This method was more accurate since there were equal amounts of cells and therefore it would be possible to compare the relative amounts of NK produced per cell.  
+We also used the natto produced with the different strains to test NK production. The natto were placed in a tube with equal amounts of NB liquid medium and mixed. The samples were similarly diluted to equal OD of 0.5 (=4\*10^4 cells) and injected into the holes.
+
+## Learn: 
+
+The NB and LB cultures produced results that were both precise and accurate to the expected relative values. 
+
+<Image src={image9} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig. 14\. Fibrin plates with NB culture of S903 strains after 24-hour culture)</em></p>
+
+However, the natto suspension liquid samples failed to show consistent results.   
+During the experiment, we also noted that some samples showed abnormally high OD relative to others. We realized that some liquid from the beans themselves and flaky sheets of bacteria and bean skin formed around the natto beans may have been interfering with the OD values, disrupting the accuracy of the measurements. 
+
+<Image src={image5} alt="test" format="avif" width={1080} />
+<p style="text-align: center;"><em>(Fig. 15\. Fibrin plates with natto suspension liquid after 24-hour culture)</em></p>
+
+In conclusion, we decided that the fibrin plate assay using liquid culture was the optimal method to determine NK production.
+
+Reference
+
+1. Ashikaga S, Nanamiya H, Ohashi Y, Kawamura F. Natural genetic competence in Bacillus subtilis natto OK2. J Bacteriol. 2000 May;182(9):2411-5. doi: 10.1128/JB.182.9.2411-2415.2000. PMID: 10762239; PMCID: PMC111301.  
+2. Itaya M, Nagasaku M, Shimada T, Ohtani N, Shiwa Y, Yoshikawa H, Kaneko S, Tomita M, Sato M. Stable and efficient delivery of DNA to Bacillus subtilis (natto) using pLS20 conjugational transfer plasmids. FEMS Microbiol Lett. 2019 Feb 1;366(4):fnz032. doi: 10.1093/femsle/fnz032. PMID: 30726909\.  
+3. Sinumvayo JP, Yang S, Chen J, Du G, Kang Z. \[Engineering and characterization of new intrinsic transcriptional terminators in Bacillus subtilis 168\]. Sheng Wu Gong Cheng Xue Bao. 2017 Jul 25;33(7):1091-1100. Chinese. doi: 10.13345/j.cjb.160484. PMID: 28869729\.  
+4. Yao Z, Meng Y, Le HG, Lee SJ, Jeon HS, Yoo JY, Kim JH. Increase of a Fibrinolytic Enzyme Production through Promoter Replacement of *aprE3-5* from *Bacillus subtilis* CH3-5. J Microbiol Biotechnol. 2021 Jun 28;31(6):833-839. doi: 10.4014/jmb.2103.03027. PMID: 33958509; PMCID: PMC9705994.  
+5. Tran DTM, Phan TTP, Doan TTN, Tran TL, Schumann W, Nguyen HD. Integrative expression vectors with P*grac* promoters for inducer-free overproduction of recombinant proteins in *Bacillus subtilis*. Biotechnol Rep (Amst). 2020 Oct 9;28:e00540. doi: 10.1016/j.btre.2020.e00540. PMID: 33163371; PMCID: PMC7599426.  
+6. Phan TT, Nguyen HD, Schumann W. Construction of a 5'-controllable stabilizing element (CoSE) for over-production of heterologous proteins at high levels in Bacillus subtilis. J Biotechnol. 2013 Oct 10;168(1):32-9. doi: 10.1016/j.jbiotec.2013.07.031. Epub 2013 Aug 14\. PMID: 23954327\.
