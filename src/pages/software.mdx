@@ -1,0 +1,48 @@
+---
+---
+import { Image } from 'astro:assets';
+import {image1} from '../assets/Software/image/2024-10-02_17.34.29.jpg';
+
+# Software
+
+# Overview
+
+The field of theoretical biology holds immense potential for understanding complex biological phenomena. However, there remains a considerable gap between theory-based (dry) research and experimental (wet) biology. Bridging this gap could greatly enhance collaboration and progress in biological sciences. Recognizing this need, we have developed a software platform that enables users to easily build mathematical models through a user-friendly graphical interface. This software is designed to bring the two worlds of biology closer, facilitating better interaction and understanding between theoretical and experimental researchers.
+
+# Background and Purpose
+
+In the process of developing this software, we discovered that while many individuals express interest in theoretical biology or Dry research, they often feel overwhelmed by the perceived complexities. This sense of difficulty largely stems from a lack of confidence in mathematical and physical concepts or an aversion to programming. As a result, many researchers hesitate to explore theoretical modeling, even though it could significantly benefit their work.
+
+Therefore, our goal was to develop modeling software that allows for the construction of mathematical models through simple, intuitive operations. This approach ensures that even those who have little experience or comfort with mathematical formulas and programming can still engage with theoretical biology. By using our software, users can simulate biological processes in an interactive and hands-on manner. The purpose of this software is not only to make Dry research more accessible but also to bring the gap between theoretical and experimental biology significantly closer.
+
+# Requirement
+
+The software enables users to model biological phenomena by simply creating networks through a graphical interface. It supports three types of networks: Gene Regulatory Network, Metabolic Network, and Spiking Neural Network. When the user selects the type of network they wish to model, the necessary objects for that network are displayed in the toolbar. By dragging and dropping these objects into the work area, users can construct the network with parameters set for each object. Users can freely input and modify the values of these parameters, allowing them to customize their model to suit their specific needs. Once placed, objects can be moved around or deleted using the backspace key.
+
+Each object in the network has an input point (on the left) and an output point (on the right). By connecting these points, users can effortlessly build a network. This intuitive design allows for easy visualization and manipulation of the model, enabling even those with limited experience to engage in biological modeling.
+
+After building a network, users can simply press the “Run” button to construct and display the corresponding mathematical model in the form of ordinary differential equations (ODEs). The software also provides a sample Python implementation using the Runge-Kutta method, a numerical technique for solving differential equations. This allows users to run simulations manually, deepening their understanding of the mathematical underpinnings of the model.
+
+<Image src={image1} alt="test" format="avif" width={1080} />
+
+# System Configuration
+
+The software is implemented with a front end built using HTML, CSS, and React.js, while the back end is developed using Node.js. For the network drawing functionality, we used ReactFlow, a powerful library for building interactive network diagrams. When the user executes a simulation, the network diagram created using ReactFlow is retrieved and analyzed through the Gemini Pro API. The analysis results are then output in MathJax for displaying the differential equations and in Python for the simulation code.
+
+This seamless integration of the front-end interface, network drawing, and mathematical modeling provides a smooth and engaging user experience, allowing users to move from graphical modeling to mathematical analysis effortlessly.
+
+# User Test
+
+To evaluate the usability and effectiveness of the software, we conducted a user test with team members of Wet. The feedback was overwhelmingly positive. They noted, “I learned that genetic circuits, such as operons and toggle switches that I have seen in textbooks, can be controlled through pseudo-circuits. Using this software, I was able to run my first ‘mathematical model’ on my own. In the future, I would like to use this software to quantitatively examine the results of my experiments.”
+
+This feedback underscores the potential of our software to serve as an educational and research tool, empowering experimental biologists to venture into theoretical modeling. By providing an intuitive and accessible platform, we aim to foster a new generation of researchers who are adept in both Dry and Wet methodologies.
+
+# Conclusion
+
+Through the development of this software, we have taken a significant step towards making theoretical biology more accessible and interactive. By providing a graphical interface that simplifies the process of building and simulating mathematical models, we hope to lower the barriers for researchers hesitant about theoretical biology due to their unfamiliarity with complex mathematics or programming.
+
+Our software not only serves as a bridge between Dry and Wet research but also as a tool for educational purposes, allowing users to experiment with and explore the mathematical models underlying biological phenomena. We believe that by bringing these two aspects of biology closer together, we can facilitate new insights and collaborations that will drive the field forward.
+
+In the future, we aim to further refine the software based on user feedback and expand its capabilities to support a broader range of biological models. By continuously enhancing the software, we hope to contribute to a research environment where the interaction between theoretical and experimental biology becomes more seamless and productive.
+
+With this software, we aspire to create a space where anyone, regardless of their background in math or programming, can explore the vast and exciting world of theoretical biology.
