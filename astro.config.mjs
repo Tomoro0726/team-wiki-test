@@ -32,6 +32,5 @@ export default defineConfig({
   build: {
     format: "file",
     assets:"_custom",
-    assetsPrefix:"https://github.com/"
   },
 });
