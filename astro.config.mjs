@@ -21,7 +21,7 @@ export default defineConfig({
       remarkPlugins: [remarkMath],
       // relevant
       rehypePlugins: [rehypeKatex], // relevant
-    })
+    }),
   ],
   markdown: {
     remarkPlugins: [remarkBreaks],
@@ -31,6 +31,8 @@ export default defineConfig({
   },
   build: {
     format: "file",
-    assets:"_custom",
+    assets: "_custom",
   },
+  site: "https://tomoro0726.github.io",
+  base: "/team-wiki-test",
 });
