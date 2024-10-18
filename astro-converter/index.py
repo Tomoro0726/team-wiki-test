@@ -30,7 +30,7 @@ def extract_paths(html_content):
 def main():
     dist_directory = 'dist'
     output_directory = 'output'
-    base_url = 'https://cdn.example.com'
+    base_url = 'cdn'
 
     all_content_paths = []
 
@@ -58,7 +58,6 @@ def main():
     for i in range(len(all_content_paths)):
         ext = os.path.splitext(all_content_paths[i])[-1]
         replace_content_paths[all_content_paths[i]] = str(i)+ext
-    print(replace_content_paths)
 
     # output directoryの中にcdnディレクトリを作成
     if not os.path.exists(output_directory+"/cdn"):
@@ -98,6 +97,29 @@ def main():
                         key, base_url+"/"+value)
                 with open(os.path.join(output_directory, file_name), 'w', encoding='utf-8') as file:
                     file.write(html_content)
+    # aタグに.htmlを追加
+    base_path = "/astro-converter/output"
+    for root, _, files in os.walk(output_directory):
+        for file_name in files:
+            if file_name.endswith('.html'):
+                html_file_path = os.path.join(root, file_name)
+                with open(html_file_path, 'r', encoding='utf-8') as file:
+                    html_content = file.read()
+                soup = BeautifulSoup(html_content, 'html.parser')
+                for a in soup.find_all('a'):
+                    if not a['href'].endswith('.html') and not a['href'].startswith('http'):
+                        if a['href'] == "/":
+                            a['href'] = base_path+"/index.html"
+                        elif a['href'].find("#") == -1:
+                            a['href'] = base_path+a['href']+".html"
+                        elif a['href'][0] == "#":
+                            pass
+                        else:
+                            a['href'] = base_path+a['href'].split(
+                                "#")[0]+".html"+"#"+a['href'].split("#")[1]
+                        print(a['href'])
+                with open(html_file_path, 'w', encoding='utf-8') as file:
+                    file.write(str(soup))
 
 
 if __name__ == "__main__":
